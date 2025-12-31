@@ -10,13 +10,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'rounded-[6px] bg-[#0070C0] flex justify-center items-center  text-white shadow-[inset_0_12px_16px_0_rgba(255, 255, 255, 0.00))]  transition-all duration-300 ease-out shadow-md hover:bg-[#6AA6E1] hover:shadow-lg hover:-translate-y-[1px] active:scale-95 active:shadow-inner',
+          'h-[36px] md:h-[40px] lg:h-[48px] rounded-[6px] bg-[#0070C0] flex justify-center items-center text-white shadow-[inset_0_12px_16px_0_rgba(255, 255, 255, 0.00))]  transition-all duration-300 ease-out shadow-xs hover:bg-[#6AA6E1] hover:shadow-lg hover:-translate-y-[1px] active:scale-95 active:shadow-inner',
         destructive:
           'bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
         outline:
           'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
         secondary:
-          'rounded-[6px] border border-[#92BDEA] bg-[#EEF3F9] shadow-[inset_0_8px_16px_0_rgba(255,255,255,0)]',
+          'h-[36px] md:h-[40px] lg:h-[48px] rounded-[6px] border border-[#92BDEA] bg-[#EEF3F9] text-[#0062B0] shadow-[inset_0_8px_16px_0_rgba(255,255,255,0)] transition-all duration-300 ease-out shadow-xs hover:bg-[#D2E6FA] hover:shadow-lg hover:-translate-y-[1px] active:scale-95 active:shadow-inner',
         ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
       },
