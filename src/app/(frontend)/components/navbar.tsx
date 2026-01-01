@@ -31,16 +31,16 @@ const Navbar = () => {
           alt="Gambar Logo Panca Timur Raya"
         />
         <div className="flex flex-row nav gap-14">
-          <Link href="#aboutus" className="flex items-center">
+          <Link href={'/detailAboutUs'} className="flex items-center">
             About Us
           </Link>
-          <Link href="#solutions" className="flex items-center">
+          <Link href={'/detailSolutions'} className="flex items-center">
             Solutions
           </Link>
-          <Link href="#portfolio" className="flex items-center">
+          <Link href={'/detailPortfolio'} className="flex items-center">
             Portfolio
           </Link>
-          <Link href="#insightsupdates" className="flex items-center">
+          <Link href={'/detailInsightsUpdates'} className="flex items-center">
             Insights & Updates
           </Link>
         </div>
@@ -71,16 +71,16 @@ const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden flex flex-col justify-center items-center ">
           <div className="nav flex flex-col px-8 gap-[48px] justify-center items-center min-h-[calc(100vh-230px)]">
-            <Link href="#aboutus" onClick={() => setIsOpen(false)}>
+            <Link href={'/detailAboutUs'} onClick={() => setIsOpen(false)}>
               About Us
             </Link>
-            <Link href="#solutions" onClick={() => setIsOpen(false)}>
+            <Link href={'/detailSolutions'} onClick={() => setIsOpen(false)}>
               Solutions
             </Link>
-            <Link href="#portfolio" onClick={() => setIsOpen(false)}>
+            <Link href={'/detailPortfolio'} onClick={() => setIsOpen(false)}>
               Portfolio
             </Link>
-            <Link href="#insightsupdates" onClick={() => setIsOpen(false)}>
+            <Link href={'/detailInsightsUpdates'} onClick={() => setIsOpen(false)}>
               Insights & Updates
             </Link>
           </div>
