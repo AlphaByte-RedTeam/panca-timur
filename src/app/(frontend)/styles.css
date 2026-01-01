@@ -156,6 +156,23 @@
   font-weight: 400;
   line-height: normal;
 }
+.stattext {
+  color: var(--primary-text, #10385d);
+
+  /* new h3 tablet */
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.statnum {
+  color: var(--primary-text, #10385d);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 
 /* desktop */
 @media (min-width: 1024px) {
@@ -214,4 +231,35 @@
     font-weight: 400;
     line-height: normal;
   }
+  .stattext {
+    color: var(--primary-text, #10385d);
+
+    /* new h3 */
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .statnum {
+    color: var(--primary-text, #10385d);
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
