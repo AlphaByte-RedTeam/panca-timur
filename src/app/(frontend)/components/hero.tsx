@@ -52,7 +52,6 @@ const Hero = () => {
           width={653}
           height={505}
           alt="Gambar Panca Timur Raya"
-          priority
         />
       </div>
     </div>
