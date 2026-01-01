@@ -19,7 +19,7 @@ const Hero = () => {
           Delivering{' '}
           <span className="relative inline-block">
             Quality
-            <span className="absolute left-0 bottom-0 -translate-y-1.5 w-full max-w-[162px] h-[4px] bg-[#10385D] rounded-full" />
+            <span className="absolute left-0 bottom-0 -translate-y-1 md:-translate-y-1.5 w-full max-w-[162px] h-[2.5px] lg:h-[4px] bg-[#10385D] rounded-full" />
           </span>{' '}
           Mechanical Electrical and Plumbing Solutions
         </h1>
