@@ -16,7 +16,7 @@ import Link from 'next/link'
 const Solutions = () => {
   const handleBookaConsultation = () => {
     const pesan = `Halo, saya ingin menanyakan ...`
-    const url = `https://wa.me/62xxxxxx?text=${encodeURIComponent(pesan)}`
+    const url = `https://wa.me/6281394056196?text=${encodeURIComponent(pesan)}`
     window.open(url, '_blank')
   }
   return (
