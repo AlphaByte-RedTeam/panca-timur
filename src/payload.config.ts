@@ -15,6 +15,7 @@ import { Blogs } from './collections/Blogs'
 
 import { en } from '@payloadcms/translations/languages/en'
 import { id } from '@payloadcms/translations/languages/id'
+import { Settings } from './payload-globals'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -27,6 +28,7 @@ export default buildConfig({
     },
   },
   collections: [Blogs, Users, Media, Portofolio, Products, Services],
+  globals: [Settings],
   editor: lexicalEditor(),
   i18n: {
     supportedLanguages: { en, id },
