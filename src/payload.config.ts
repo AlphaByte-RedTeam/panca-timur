@@ -12,12 +12,14 @@ import { Products } from './collections/Products'
 import { Portofolio } from './collections/Portofolio'
 import { Services } from './collections/Services'
 import { Blogs } from './collections/Blogs'
+import { Documents } from './collections/Documents'
+import { Companies } from './collections/Companies'
 
 import { en } from '@payloadcms/translations/languages/en'
 import { id } from '@payloadcms/translations/languages/id'
+
 import { Settings } from './payload-globals'
-import { Documents } from './collections/Documents'
-import { Companies } from './collections/Companies'
+import { TextConfig } from './text-globals'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -30,7 +32,7 @@ export default buildConfig({
     },
   },
   collections: [Blogs, Companies, Documents, Users, Media, Portofolio, Products, Services],
-  globals: [Settings],
+  globals: [Settings, TextConfig],
   editor: lexicalEditor(),
   i18n: {
     supportedLanguages: { en, id },
