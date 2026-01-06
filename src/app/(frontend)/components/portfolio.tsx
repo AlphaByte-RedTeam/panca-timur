@@ -1,9 +1,14 @@
+'use client'
+
 import { Card } from '@/components/ui/card'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Tape from './marquee'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import AnimatedNumber from './animatednumber'
+
+import { motion } from 'motion/react'
 
 const Portfolio = () => {
   return (
@@ -17,7 +22,9 @@ const Portfolio = () => {
               <span className="w-[6px] flex-1 bg-[#10385D]" />
             </div>
             <div className="-ml-3 bg-gradient-to-r from-[#D2E6FA] to-white px-[32px] py-4">
-              <p className="statnum text-[48px] font-bold text-[#10385D] leading-none">11+</p>
+              <p className="statnum text-[48px] font-bold text-[#10385D] leading-none">
+                <AnimatedNumber value={11} suffix="+" />
+              </p>
               <p className="stattext text-[#10385D]">Years of Experience</p>
             </div>
           </div>
@@ -27,12 +34,20 @@ const Portfolio = () => {
               <span className="w-[6px] flex-1 bg-[#10385D]" />
             </div>
             <div className="-ml-3 bg-gradient-to-r from-[#D2E6FA] to-white px-[32px] py-4">
-              <p className="statnum text-[48px] font-bold text-[#10385D] leading-none">114+</p>
+              <p className="statnum text-[48px] font-bold text-[#10385D] leading-none">
+                <AnimatedNumber value={114} suffix="+" />
+              </p>
               <p className="stattext text-[#10385D]">Projects Completed</p>
             </div>
           </div>
         </div>
-        <div className="relative">
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 3 }}
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <div className="absolute top-0 left-0 transform rotate-0 z-10">
             <Card className="w-[160px] h-[213px] md:w-[200px] md:h-[267px] lg:w-[300px] lg:h-[400px]">
               <Image
@@ -53,7 +68,7 @@ const Portfolio = () => {
               />
             </Card>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div>
         <h3 className="titleh3 px-[20px] md:px-[59px] pt-82 md:pt-28 lg:pt-52">Trusted By</h3>

@@ -10,6 +10,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: 'Panca Timur Raya',
   description: 'Website Panca Timur Raya',
+  icons: {
+    icon: 'dokumPancaTimurR/logo.jpg',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

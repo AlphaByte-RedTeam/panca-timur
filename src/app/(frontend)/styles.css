@@ -87,7 +87,7 @@
   font-weight: 500;
   line-height: 20px;
 }
-
+/* 
 .nav :hover {
   color: #0070c0;
   text-decoration: underline;
@@ -97,7 +97,7 @@
 
 .nav :active {
   transform: scale(0.95);
-}
+} */
 
 /* tablet dan mobile */
 .titleh1 {

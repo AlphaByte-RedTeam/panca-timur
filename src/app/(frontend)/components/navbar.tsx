@@ -7,6 +7,10 @@ import Link from 'next/link'
 
 import { useState } from 'react'
 
+import { motion } from 'motion/react'
+
+const MotionLink = motion(Link)
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -33,18 +37,62 @@ const Navbar = () => {
           />
         </Link>
         <div className="flex flex-row nav gap-14">
-          <Link href={'/detailAboutUs'} className="flex items-center">
+          <MotionLink
+            href={'/detailAboutUs'}
+            whileHover={{
+              scale: 1.03,
+              color: '#0070c0',
+              translateY: -2,
+              textDecoration: 'underline',
+            }}
+            whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="flex items-center"
+          >
             About Us
-          </Link>
-          <Link href={'/detailSolutions'} className="flex items-center">
+          </MotionLink>
+          <MotionLink
+            href={'/detailSolutions'}
+            whileHover={{
+              scale: 1.03,
+              color: '#0070c0',
+              translateY: -2,
+              textDecoration: 'underline',
+            }}
+            whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="flex items-center"
+          >
             Solutions
-          </Link>
-          <Link href={'/detailPortfolio'} className="flex items-center">
+          </MotionLink>
+          <MotionLink
+            href={'/detailPortfolio'}
+            whileHover={{
+              scale: 1.03,
+              color: '#0070c0',
+              translateY: -2,
+              textDecoration: 'underline',
+            }}
+            whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="flex items-center"
+          >
             Portfolio
-          </Link>
-          <Link href={'/detailInsightsUpdates'} className="flex items-center">
+          </MotionLink>
+          <MotionLink
+            href={'/detailInsightsUpdates'}
+            whileHover={{
+              scale: 1.03,
+              color: '#0070c0',
+              translateY: -2,
+              textDecoration: 'underline',
+            }}
+            whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="flex items-center"
+          >
             Insights & Updates
-          </Link>
+          </MotionLink>
         </div>
         <Button
           onClick={handleContactUs}
@@ -76,18 +124,62 @@ const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden flex flex-col justify-center items-center ">
           <div className="nav flex flex-col px-8 gap-[48px] justify-center items-center min-h-[calc(100vh-230px)]">
-            <Link href={'/detailAboutUs'} onClick={() => setIsOpen(false)}>
+            <MotionLink
+              href={'/detailAboutUs'}
+              onClick={() => setIsOpen(false)}
+              whileHover={{
+                scale: 1.03,
+                color: '#0070c0',
+                translateY: -2,
+                textDecoration: 'underline',
+              }}
+              whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
               About Us
-            </Link>
-            <Link href={'/detailSolutions'} onClick={() => setIsOpen(false)}>
+            </MotionLink>
+            <MotionLink
+              href={'/detailSolutions'}
+              onClick={() => setIsOpen(false)}
+              whileHover={{
+                scale: 1.03,
+                color: '#0070c0',
+                translateY: -2,
+                textDecoration: 'underline',
+              }}
+              whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
               Solutions
-            </Link>
-            <Link href={'/detailPortfolio'} onClick={() => setIsOpen(false)}>
+            </MotionLink>
+            <MotionLink
+              href={'/detailPortfolio'}
+              onClick={() => setIsOpen(false)}
+              whileHover={{
+                scale: 1.03,
+                color: '#0070c0',
+                translateY: -2,
+                textDecoration: 'underline',
+              }}
+              whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
               Portfolio
-            </Link>
-            <Link href={'/detailInsightsUpdates'} onClick={() => setIsOpen(false)}>
+            </MotionLink>
+            <MotionLink
+              href={'/detailInsightsUpdates'}
+              onClick={() => setIsOpen(false)}
+              whileHover={{
+                scale: 1.03,
+                color: '#0070c0',
+                translateY: -2,
+                textDecoration: 'underline',
+              }}
+              whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
               Insights & Updates
-            </Link>
+            </MotionLink>
           </div>
           <Button
             onClick={handleContactUs}
