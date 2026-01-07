@@ -7,6 +7,7 @@ import { Phone } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Footer from '../components/footer'
 import { motion } from 'motion/react'
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 
 export default function AboutUsPage() {
   const handleBookaConsultation = () => {
@@ -52,14 +53,17 @@ export default function AboutUsPage() {
       </div>
 
       <div>
-        <Tabs defaultValue="all" className="w-full gap-[20px]">
-          <TabsList className="flex flex-wrap justify-start mb-[24px]">
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="mechanicalplumbing">Mechanical & Plumbing</TabsTrigger>
-            <TabsTrigger value="hvac">HVAC</TabsTrigger>
-            <TabsTrigger value="electrical">Electrical</TabsTrigger>
-          </TabsList>
-          <TabsContent value="all" className="mt-[52px] md:mt-0">
+        <Tabs defaultValue="all" className="w-full">
+          <ScrollArea className="w-full  py-4 ">
+            <TabsList className="flex w-max flex-nowrap justify-start">
+              <TabsTrigger value="all">All</TabsTrigger>
+              <TabsTrigger value="mechanicalplumbing">Mechanical & Plumbing</TabsTrigger>
+              <TabsTrigger value="hvac">HVAC</TabsTrigger>
+              <TabsTrigger value="electrical">Electrical</TabsTrigger>
+              <ScrollBar orientation="horizontal" />
+            </TabsList>
+          </ScrollArea>
+          <TabsContent value="all" className="mt-[8px] md:mt-0">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
