@@ -13,7 +13,7 @@ const AboutUs = () => {
         className="p text-[white] text-center"
         initial={{ opacity: 0.5, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2 }}
+        transition={{ duration: 0.3 }}
         viewport={{ once: true, amount: 0.3 }}
       >
         PT. Panca Timur Raya merupakan perusahaan swasta berskala nasional yang berkomitmen

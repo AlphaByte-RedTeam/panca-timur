@@ -19,7 +19,7 @@ export default function GalleryElectrical({ items }: { items: GalleryItem[] }) {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 0.4 }}
         viewport={{ once: true }}
         className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-y-[16px] md:gap-y-[24px] lg:gap-y-[44px]"
       >

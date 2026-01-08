@@ -108,7 +108,7 @@ export default function SolutionsPage() {
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.4 }}
                 viewport={{ once: true, amount: 0.3 }}
                 className="flex justify-center"
               >
@@ -143,7 +143,7 @@ export default function SolutionsPage() {
                         </Button>
                       </div>
                     </DialogTrigger>
-                    <DialogContent className="w-[350px] h-[760px] md:w-[720px] md:h-[405px] lg:w-[1100px] lg:h-[550px] p-0 flex flex-col md:flex-row">
+                    <DialogContent className="w-[350px] h-[600px] md:w-[650px] md:h-[405px] lg:w-[950px] lg:h-[550px] p-0 flex flex-col md:flex-row">
                       <div
                         className="relative w-full h-[557px] md:flex-1 md:h-full overflow-hidden     rounded-tl-[8px] rounded-tr-[8px]
                     md:rounded-tl-[8px] md:rounded-bl-[8px]
@@ -156,7 +156,7 @@ export default function SolutionsPage() {
                           className="object-cover"
                         />
                       </div>
-                      <div className="w-[350px] md:w-[374px] lg:w-[626px] h-full p-[20px] lg:p-[40px] flex flex-col gap-5">
+                      <div className="w-[350px] md:w-[354px] lg:w-[476px] h-full p-[20px] lg:p-[40px] flex flex-col gap-5">
                         <DialogHeader className="text-left gap-[20px]">
                           <DialogTitle className="titleh3">Mechanical & Plumbing</DialogTitle>
                           <DialogDescription className="pdialog">
@@ -190,7 +190,7 @@ export default function SolutionsPage() {
                 // className="hidden md:block"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1.5 }}
+                transition={{ duration: 0.4 }}
                 viewport={{ once: true, amount: 0.3 }}
                 // className="flex justify-center"
               >
@@ -228,7 +228,7 @@ export default function SolutionsPage() {
                         </Button>
                       </div>
                     </DialogTrigger>
-                    <DialogContent className="w-[350px] h-[760px] md:w-[720px] md:h-[405px] lg:w-[1100px] lg:h-[550px] p-0 flex flex-col md:flex-row">
+                    <DialogContent className="w-[350px] h-[600px] md:w-[650px] md:h-[405px] lg:w-[950px] lg:h-[550px] p-0 flex flex-col md:flex-row">
                       <div
                         className="relative w-full h-[557px] md:flex-1 md:h-full overflow-hidden     rounded-tl-[8px] rounded-tr-[8px]
                 md:rounded-tl-[8px] md:rounded-bl-[8px]
@@ -277,7 +277,7 @@ export default function SolutionsPage() {
                 // className="hidden lg:block"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 2 }}
+                transition={{ duration: 0.4 }}
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <Card className="mx-auto w-[294px] xl:w-[363px] overflow-hidden">
@@ -311,7 +311,7 @@ export default function SolutionsPage() {
                         </Button>
                       </div>
                     </DialogTrigger>
-                    <DialogContent className="w-[350px] h-[760px] md:w-[720px] md:h-[405px] lg:w-[1100px] lg:h-[550px] p-0 flex flex-col md:flex-row">
+                    <DialogContent className="w-[350px] h-[600px] md:w-[650px] md:h-[405px] lg:w-[950px] lg:h-[550px] p-0 flex flex-col md:flex-row">
                       <div
                         className="relative w-full h-[557px] md:flex-1 md:h-full overflow-hidden     rounded-tl-[8px] rounded-tr-[8px]
                 md:rounded-tl-[8px] md:rounded-bl-[8px]
@@ -365,7 +365,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -385,7 +385,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.4 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -405,7 +405,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.8 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -425,7 +425,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 2.2 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -445,7 +445,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 2.6 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -465,7 +465,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 3 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -485,7 +485,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 3.4 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -505,7 +505,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 3.8 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -525,7 +525,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 4.2 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -545,7 +545,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 4.6 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -565,7 +565,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
@@ -585,7 +585,7 @@ export default function SolutionsPage() {
           <motion.div
             initial={{ opacity: 0.5, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 5.4 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">

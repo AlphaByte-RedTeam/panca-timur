@@ -64,7 +64,7 @@ export default function PortfolioPage() {
   ]
 
   const galleryHvac = [
-    { src: '/dokumPancaTimurR/jpg', alt: 'hvac1' },
+    { src: '/dokumPancaTimurR/hvac1.jpg', alt: 'hvac' },
     { src: '/dokumPancaTimurR/hvac2.jpg', alt: 'hvac2' },
     { src: '/dokumPancaTimurR/hvac3.jpg', alt: 'hvac3' },
     { src: '/dokumPancaTimurR/hvac4.jpg', alt: 'hvac4' },
@@ -150,15 +150,15 @@ export default function PortfolioPage() {
             <GalleryAll items={galleryAll} />
           </TabsContent>
 
-          <TabsContent value="mechanicalplumbing" className="mt-[52px] md:mt-0">
+          <TabsContent value="mechanicalplumbing" className="mt-[8px] md:mt-0">
             <GalleryMechanicalPlumbing items={galleryMechanicalPlumbing} />
           </TabsContent>
 
-          <TabsContent value="hvac" className="mt-[52px] md:mt-0">
+          <TabsContent value="hvac" className="mt-[8px] md:mt-0">
             <GalleryHvac items={galleryHvac} />
           </TabsContent>
 
-          <TabsContent value="electrical" className="mt-[52px] md:mt-0">
+          <TabsContent value="electrical" className="mt-[8px] md:mt-0">
             <GalleryElectrical items={galleryElectrical} />
           </TabsContent>
         </Tabs>

@@ -90,10 +90,10 @@ export default function AboutUsPage() {
           <div className="border-l-4 rounded-md p-4 border-[#10385D] block lg:hidden"></div>
           <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row">
             <motion.p
-              initial={{ opacity: 0, y: 160 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.8,
+                duration: 0.4,
                 ease: 'easeOut',
               }}
               viewport={{ once: true, amount: 0.3 }}
@@ -106,10 +106,10 @@ export default function AboutUsPage() {
             </motion.p>
             <div className="border-l-4 rounded-md p-4  border-[#10385D] hidden lg:block"></div>
             <motion.p
-              initial={{ opacity: 0, y: 160 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 2.2,
+                duration: 0.4,
                 ease: 'easeOut',
               }}
               viewport={{ once: true, amount: 0.3 }}
@@ -127,10 +127,10 @@ export default function AboutUsPage() {
 
       <div className="flex flex-col lg:flex-row mt-[50px] gap-[20px] px-[24px]">
         <motion.div
-          initial={{ opacity: 0, x: -200 }}
+          initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
-            duration: 2,
+            duration: 0.4,
             ease: 'easeOut',
           }}
           viewport={{ once: true, amount: 0.4 }}
@@ -143,10 +143,10 @@ export default function AboutUsPage() {
           </p>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 300 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
-            duration: 2,
+            duration: 0.4,
             ease: 'easeOut',
           }}
           viewport={{ once: true, amount: 0.4 }}
@@ -172,7 +172,7 @@ export default function AboutUsPage() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
             className="titleh3 flex flex-row gap-3 items-center"
           >
@@ -181,7 +181,7 @@ export default function AboutUsPage() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.9 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
             className=" titleh3 flex flex-row gap-3 items-center"
           >
@@ -190,7 +190,7 @@ export default function AboutUsPage() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.3 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
             className="titleh3 flex flex-row gap-3 items-center"
           >
@@ -199,7 +199,7 @@ export default function AboutUsPage() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.7 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
             className="titleh3 flex flex-row gap-3 items-center"
           >
@@ -208,7 +208,7 @@ export default function AboutUsPage() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 2.1 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
             className="titleh3 flex flex-row gap-3 items-center"
           >
@@ -217,7 +217,7 @@ export default function AboutUsPage() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 2.5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
             className="titleh3 flex flex-row gap-3 items-center"
           >
@@ -226,7 +226,7 @@ export default function AboutUsPage() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 2.9 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
             className="titleh3 flex flex-row gap-3 items-center"
           >
@@ -235,7 +235,7 @@ export default function AboutUsPage() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 3.3 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
             className="titleh3 flex flex-row gap-3 items-center"
           >
@@ -246,7 +246,7 @@ export default function AboutUsPage() {
 
       <div className="px-[20px] md:px-[44px] mt-[44px] mb-[31px] py-4 bg-[#F5F7FA]">
         <h1 className="titleh1 text-[#10385d] pb-4">Legal</h1>
-        <div className="flex flex-col lg:flex-row lg:gap-[44px] ">
+        <div className="flex flex-col lg:flex-row lg:gap-[44px]">
           <div className="lg:w-[450px] xl:w-[580px]">
             <p className="w-full p text-[#747775] pb-4">
               Verified documents that ensure our compliance and credibility.
@@ -254,7 +254,7 @@ export default function AboutUsPage() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true, amount: 0.3 }}
               className="p"
             >
@@ -266,11 +266,11 @@ export default function AboutUsPage() {
               KBLI: 43224, 43291, 43221
             </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 mt-4 lg:mt-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 mt-4 lg:mt-0 justify-items-center">
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 3 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true, amount: 0.6 }}
             >
               <Card className="w-[321px] h-[79px] lg:w-[452px] lg:h-[105px] mb-[20px]">
@@ -305,7 +305,7 @@ export default function AboutUsPage() {
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 2 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true, amount: 0.6 }}
             >
               <Card className="w-[321px] h-[79px] lg:w-[452px] lg:h-[105px]  mb-[20px]">
@@ -338,7 +338,7 @@ export default function AboutUsPage() {
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true, amount: 0.6 }}
             >
               <Card className="w-[321px] h-[79px] lg:w-[452px] lg:h-[105px]">

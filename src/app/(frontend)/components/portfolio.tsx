@@ -43,9 +43,9 @@ const Portfolio = () => {
         </div>
         <motion.div
           className="relative"
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 3 }}
+          transition={{ duration: 0.4 }}
           viewport={{ once: true, amount: 0.4 }}
         >
           <div className="absolute top-0 left-0 transform rotate-0 z-10">
@@ -74,8 +74,16 @@ const Portfolio = () => {
         <h3 className="titleh3 text-center pt-82 md:pt-28 lg:pt-52">Trusted By</h3>
         <Tape />
       </div>
-      <Link href={'/detail-portfolio'} className="p-4 md:p-8 flex justify-center" aria-label="Link lebih lanjut Projek Portofolio (View Projects)">
-        <Button variant="secondary" className="w-full md:w-[691px] lg:w-[243px] " aria-label="Lihat lebih lanjut Projek Portofolio (View Projects)">
+      <Link
+        href={'/detail-portfolio'}
+        className="p-4 md:p-8 flex justify-center"
+        aria-label="Link lebih lanjut Projek Portofolio (View Projects)"
+      >
+        <Button
+          variant="secondary"
+          className="w-full md:w-[691px] lg:w-[243px] "
+          aria-label="Lihat lebih lanjut Projek Portofolio (View Projects)"
+        >
           View Projects
           <ArrowUpRight />
         </Button>

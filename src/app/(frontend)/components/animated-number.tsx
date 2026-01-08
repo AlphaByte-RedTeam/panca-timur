@@ -10,7 +10,7 @@ interface AnimatedNumberProps {
   suffix?: string
 }
 
-const AnimatedNumber = ({ value, duration = 2, className, suffix }: AnimatedNumberProps) => {
+const AnimatedNumber = ({ value, duration = 0.8, className, suffix }: AnimatedNumberProps) => {
   const count = useMotionValue(0)
   const [rounded, setRounded] = useState(0)
   const [start, setStart] = useState(false)

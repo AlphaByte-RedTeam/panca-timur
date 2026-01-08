@@ -98,7 +98,7 @@ export default function InsightsUpdatesPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, type: 'spring' }}
+            transition={{ duration: 0.4, type: 'spring' }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[332px] md:w-[699px] md:h-[236px] lg:w-[945px] lg:h-[306px] overflow-hidden flex flex-col md:flex-row md:gap-[16px] lg:gap-[32px] md:mb-[20px] lg:mb-[44px]">
@@ -131,8 +131,9 @@ export default function InsightsUpdatesPage() {
                       Read More
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="w-screen h-screen max-w-none max-h-none flex flex-col p-0 overflow-hidden">
+                  <DialogContent className="w-screen h-screen max-w-none max-h-none flex flex-col p-0 overflow-hidden [&>button]:hidden">
                     <div className="flex-1 overflow-y-auto">
+                      <Navbar />
                       <div className="relative w-full h-[111px] md:h-[222px] lg:h-[340px] flex-shrink-0">
                         <Image
                           src="/dokumPancaTimurR/mechanicalplumbing3.jpg"
@@ -201,7 +202,7 @@ export default function InsightsUpdatesPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.7, type: 'spring' }}
+            transition={{ duration: 0.4, type: 'spring' }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[332px] md:w-[699px] md:h-[236px] lg:w-[945px] lg:h-[306px] overflow-hidden flex flex-col md:flex-row md:gap-[16px] lg:gap-[32px] md:mb-[20px] lg:mb-[44px] mt-4 md:mt-0">
@@ -234,8 +235,9 @@ export default function InsightsUpdatesPage() {
                       Read More
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="w-screen h-screen max-w-none max-h-none flex flex-col p-0 overflow-hidden">
+                  <DialogContent className="w-screen h-screen max-w-none max-h-none flex flex-col p-0 overflow-hidden [&>button]:hidden">
                     <div className="flex-1 overflow-y-auto">
+                      <Navbar />
                       <div className="relative w-full h-[111px] md:h-[222px] lg:h-[340px] flex-shrink-0">
                         <Image
                           src="/dokumPancaTimurR/mechanicalplumbing3.jpg"
