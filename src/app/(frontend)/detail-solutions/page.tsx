@@ -25,7 +25,13 @@ import {
   CarouselNext,
 } from '@/components/ui/carousel'
 
-export default function AboutUsPage() {
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Solutions Page | Panca Timur Raya',
+}
+
+export default function SolutionsPage() {
   const handleBookaConsultation = () => {
     const pesan = `Halo, saya ingin menanyakan ...`
     const url = `https://wa.me/6281394056196?text=${encodeURIComponent(pesan)}`
@@ -127,7 +133,7 @@ export default function AboutUsPage() {
                       >
                         <Image
                           src="/dokumPancaTimurR/mechanicalplumbing3.jpg"
-                          alt="Gambar Panca Timur Raya"
+                          alt="Image Service Mechanical & Plumbing"
                           fill
                           className="object-cover"
                         />
@@ -204,7 +210,7 @@ export default function AboutUsPage() {
                       >
                         <Image
                           src="/dokumPancaTimurR/hvac5.jpg"
-                          alt="Gambar Panca Timur Raya"
+                          alt="Image Service Heating, Ventilation & Air Conditioning (HVAC)"
                           fill
                           className="object-cover"
                         />
@@ -279,7 +285,7 @@ export default function AboutUsPage() {
                       >
                         <Image
                           src="/dokumPancaTimurR/electrical6.jpg"
-                          alt="Gambar Panca Timur Raya"
+                          alt="Image Service Electrical"
                           fill
                           className="object-cover"
                         />
@@ -328,7 +334,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/TankiFRP1.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Tanki FRP"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -348,7 +354,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/centrifugalFan1.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Centrifugal Fan"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -368,7 +374,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/greaseTrap.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Grease Trap"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -388,7 +394,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/gutterTalangAir.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Gutter Talang Air"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -408,7 +414,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/ductingFiber.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Ducting Fiber"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -428,7 +434,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/axialFan.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Axial Fan"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -448,7 +454,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/cabinetFanAHU1.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Cabinet Fan AHU"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -468,7 +474,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/tankiSTPIPAL1.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Tanki STP IPAL"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -488,7 +494,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/aerialMarkerBall2.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Aerial Marker Ball"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -508,7 +514,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/supplyAirGrill2.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Supply Air Gill"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -528,7 +534,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/diffuser.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Diffuser"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -548,7 +554,7 @@ export default function AboutUsPage() {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/jetNozzel.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Jet Nozzel"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />

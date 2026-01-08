@@ -51,7 +51,7 @@ const Hero = () => {
           src="/dokumPancaTimurR/electrical2.jpg"
           width={653}
           height={505}
-          alt="Gambar Panca Timur Raya"
+          alt="Gambar Logo Panca Timur Raya"
         />
       </div>
     </div>

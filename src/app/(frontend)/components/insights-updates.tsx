@@ -73,7 +73,7 @@ const InsightsUpdates = () => {
                 <div className="relative w-full h-[111px] md:h-[222px] lg:h-[340px] flex-shrink-0">
                   <Image
                     src="/dokumPancaTimurR/mechanicalplumbing3.jpg"
-                    alt="Gambar Panca Timur Raya"
+                    alt="Image Service Mechanical & Plumbing"
                     fill
                     className="object-cover"
                   />
@@ -175,7 +175,7 @@ const InsightsUpdates = () => {
                 <div className="relative w-full h-[111px] md:h-[222px] lg:h-[340px] flex-shrink-0">
                   <Image
                     src="/dokumPancaTimurR/mechanicalplumbing3.jpg"
-                    alt="Gambar Panca Timur Raya"
+                    alt="Image Service Mechanical & Plumbing"
                     fill
                     className="object-cover"
                   />

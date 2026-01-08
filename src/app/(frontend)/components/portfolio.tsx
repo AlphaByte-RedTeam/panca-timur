@@ -52,7 +52,7 @@ const Portfolio = () => {
             <Card className="w-[160px] h-[213px] md:w-[200px] md:h-[267px] lg:w-[300px] lg:h-[400px]">
               <Image
                 src="/dokumPancaTimurR/projek1.jpg"
-                alt="Card 1"
+                alt="Image Project Portfolio"
                 className="object-cover w-full h-full p-4"
                 fill
               />
@@ -62,7 +62,7 @@ const Portfolio = () => {
             <Card className="w-[160px] h-[213px] md:w-[200px] md:h-[267px] lg:w-[300px] lg:h-[400px]">
               <Image
                 src="/dokumPancaTimurR/mechanicalplumbing1.jpg"
-                alt="Card 2"
+                alt="Image Project Portfolio"
                 className="object-cover w-full h-full p-4"
                 fill
               />

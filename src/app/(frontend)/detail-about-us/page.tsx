@@ -22,6 +22,11 @@ import { Dialog, DialogTrigger, DialogContent, DialogTitle } from '@/components/
 import Footer from '../components/footer'
 
 import { motion } from 'motion/react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Us Page | Panca Timur Raya',
+}
 
 export default function AboutUsPage() {
   const handleBookaConsultation = () => {
@@ -36,7 +41,7 @@ export default function AboutUsPage() {
         <Image
           className="object-cover"
           fill
-          alt="Image About Us"
+          alt="Image About Us (Team)"
           src={'/dokumPancaTimurR/team.jpg'}
         />
       </div>
@@ -274,7 +279,7 @@ export default function AboutUsPage() {
                     <DialogContent className=" w-[340px] h-[415px] md:w-[600px] md:h-[936px] lg:w-[579px] lg:h-[763px] ">
                       <Image
                         src="/dokumPancaTimurR/dokumenperusahaan3.jpg"
-                        alt="Gambar Panca Timur Raya"
+                        alt="Dokumen Perusahaan Perizinan Berusaha Berbasis Resiko"
                         fill
                         className="object-contain"
                       />
@@ -306,7 +311,7 @@ export default function AboutUsPage() {
                     <DialogContent className=" w-[340px] h-[415px] md:w-[600px] md:h-[936px] lg:w-[579px] lg:h-[763px] ">
                       <Image
                         src="/dokumPancaTimurR/aktapendirian.jpg"
-                        alt="Gambar Panca Timur Raya"
+                        alt="Dokumen Perusahaan Akta Pendirian Perseoran Terbatas"
                         fill
                         className="object-contain"
                       />
@@ -338,7 +343,7 @@ export default function AboutUsPage() {
                     <DialogContent className="w-[340px] h-[415px] md:w-[600px] md:h-[936px] lg:w-[579px] lg:h-[763px] ">
                       <Image
                         src="/dokumPancaTimurR/aktapengesahan.jpg"
-                        alt="Gambar Panca Timur Raya"
+                        alt="Dokumen Perusahaan Akta Pengesahan Badan Hukum"
                         fill
                         className="object-contain"
                       />

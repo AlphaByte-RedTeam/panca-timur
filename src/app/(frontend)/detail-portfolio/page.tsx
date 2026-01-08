@@ -3,14 +3,20 @@
 import Image from 'next/image'
 import Navbar from '../components/navbar'
 import { Button } from '@/components/ui/button'
-import { Loader, Phone, RefreshCcw } from 'lucide-react'
+import { Phone, RefreshCcw } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Footer from '../components/footer'
 import { motion } from 'motion/react'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import React from 'react'
 
-export default function AboutUsPage() {
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Portfolio Page | Panca Timur Raya',
+}
+
+export default function PortfolioPage() {
   const galleryAll = [
     { src: '/dokumPancaTimurR/electrical1.jpg', alt: 'electrical1' },
     { src: '/dokumPancaTimurR/electrical2.jpg', alt: 'electrical2' },

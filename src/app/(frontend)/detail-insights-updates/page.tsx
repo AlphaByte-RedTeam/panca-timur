@@ -26,7 +26,13 @@ import {
 
 import { motion } from 'motion/react'
 
-export default function AboutUsPage() {
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Insights and Updates Page | Panca Timur Raya',
+}
+
+export default function InsightsUpdatesPage() {
   const handleBookaConsultation = () => {
     const pesan = `Halo, saya ingin menanyakan ...`
     const url = `https://wa.me/6281394056196?text=${encodeURIComponent(pesan)}`
@@ -114,7 +120,7 @@ export default function AboutUsPage() {
                       <div className="relative w-full h-[111px] md:h-[222px] lg:h-[340px] flex-shrink-0">
                         <Image
                           src="/dokumPancaTimurR/mechanicalplumbing3.jpg"
-                          alt="Gambar Panca Timur Raya"
+                          alt="Image Service Mechanical & Plumbing"
                           fill
                           className="object-cover"
                         />
@@ -213,7 +219,7 @@ export default function AboutUsPage() {
                       <div className="relative w-full h-[111px] md:h-[222px] lg:h-[340px] flex-shrink-0">
                         <Image
                           src="/dokumPancaTimurR/mechanicalplumbing3.jpg"
-                          alt="Gambar Panca Timur Raya"
+                          alt="Image Service Mechanical & Plumbing"
                           fill
                           className="object-cover"
                         />

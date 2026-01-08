@@ -8,8 +8,12 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'Panca Timur Raya',
-  description: 'Website Panca Timur Raya',
+  title: {
+    template: '%s | Panca Timur Raya',
+    default: 'Website Panca Timur Raya',
+  },
+  description:
+    ' PT. Panca Timur Raya berkomitmen memberikan layanan konstruksi Mechanical, Electrical, dan Plumbing (MEP) yang berkualitas, tepat waktu, aman, dan sesuai standar industri.',
   icons: {
     icon: 'dokumPancaTimurR/logo.jpg',
   },

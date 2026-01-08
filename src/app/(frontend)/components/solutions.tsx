@@ -85,7 +85,7 @@ const Solutions = () => {
                       >
                         <Image
                           src="/dokumPancaTimurR/mechanicalplumbing3.jpg"
-                          alt="Gambar Panca Timur Raya"
+                          alt="Image Service Mechanical & Plumbing"
                           fill
                           className="object-cover"
                         />
@@ -162,7 +162,7 @@ const Solutions = () => {
                       >
                         <Image
                           src="/dokumPancaTimurR/hvac5.jpg"
-                          alt="Gambar Panca Timur Raya"
+                          alt="Image Service Heating, Ventilation & Air Conditioning (HVAC)"
                           fill
                           className="object-cover"
                         />
@@ -237,7 +237,7 @@ const Solutions = () => {
                       >
                         <Image
                           src="/dokumPancaTimurR/electrical6.jpg"
-                          alt="Gambar Panca Timur Raya"
+                          alt="Image Service Electrical"
                           fill
                           className="object-cover"
                         />
@@ -282,7 +282,7 @@ const Solutions = () => {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/TankiFRP1.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Tanki FRP"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -302,7 +302,7 @@ const Solutions = () => {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/centrifugalFan1.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Centrifugal Fan"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -323,7 +323,7 @@ const Solutions = () => {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/greaseTrap.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Grease Trap"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -344,7 +344,7 @@ const Solutions = () => {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/gutterTalangAir.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Gutter Talang Air"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -365,7 +365,7 @@ const Solutions = () => {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/ductingFiber.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Ducting Fiber"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
@@ -386,7 +386,7 @@ const Solutions = () => {
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 <Image
                   src="/dokumPancaTimurR/axialFan.jpg"
-                  alt="Image Service Electrical"
+                  alt="Image Axial Fan"
                   className="object-cover w-full px-4 pt-4"
                   fill
                 />
