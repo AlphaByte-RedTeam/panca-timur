@@ -13,11 +13,8 @@ export const Blogs: CollectionConfig = {
   slug: 'blogs',
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'status', 'publishedAt', 'featuredImg'],
   },
-  access: {
-    read: () => true,
-  },
+
   versions: {
     drafts: true,
   },
@@ -75,7 +72,6 @@ export const Blogs: CollectionConfig = {
       name: 'content',
       type: 'richText',
       required: true,
-      localized: true,
       editor: lexicalEditor({
         admin: {
           placeholder: {

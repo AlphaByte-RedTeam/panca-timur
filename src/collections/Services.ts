@@ -5,7 +5,6 @@ export const Services: CollectionConfig = {
   slug: 'services',
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'status', 'publishedAt', 'featuredImg'],
   },
   labels: {
     singular: {
@@ -16,9 +15,6 @@ export const Services: CollectionConfig = {
       id: 'Layanan',
       en: 'Services',
     },
-  },
-  access: {
-    read: () => true,
   },
   versions: {
     drafts: true,

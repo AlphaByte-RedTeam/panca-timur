@@ -67,12 +67,14 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    blogs: Blog;
     users: User;
     media: Media;
-    portofolio: Portofolio;
+    companies: Company;
+    documents: Document;
     products: Product;
     services: Service;
+    portofolio: Portofolio;
+    blogs: Blog;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -80,12 +82,14 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
-    blogs: BlogsSelect<false> | BlogsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    portofolio: PortofolioSelect<false> | PortofolioSelect<true>;
+    companies: CompaniesSelect<false> | CompaniesSelect<true>;
+    documents: DocumentsSelect<false> | DocumentsSelect<true>;
     products: ProductsSelect<false> | ProductsSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
+    portofolio: PortofolioSelect<false> | PortofolioSelect<true>;
+    blogs: BlogsSelect<false> | BlogsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -94,8 +98,24 @@ export interface Config {
   db: {
     defaultIDType: string;
   };
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'about-us-page': AboutUsPage;
+    'insights-page': InsightsPage;
+    'landing-page': LandingPage;
+    'portofolio-page': PortofolioPage;
+    'solutions-page': SolutionsPage;
+    'footer-config': FooterConfig;
+    'logo-config': LogoConfig;
+  };
+  globalsSelect: {
+    'about-us-page': AboutUsPageSelect<false> | AboutUsPageSelect<true>;
+    'insights-page': InsightsPageSelect<false> | InsightsPageSelect<true>;
+    'landing-page': LandingPageSelect<false> | LandingPageSelect<true>;
+    'portofolio-page': PortofolioPageSelect<false> | PortofolioPageSelect<true>;
+    'solutions-page': SolutionsPageSelect<false> | SolutionsPageSelect<true>;
+    'footer-config': FooterConfigSelect<false> | FooterConfigSelect<true>;
+    'logo-config': LogoConfigSelect<false> | LogoConfigSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -125,9 +145,86 @@ export interface UserAuthOperations {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "blogs".
+ * via the `definition` "users".
  */
-export interface Blog {
+export interface User {
+  id: string;
+  role?: ('super-admin' | 'admin') | null;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: string;
+  alt: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "companies".
+ */
+export interface Company {
+  id: string;
+  name: string;
+  image: string | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "documents".
+ */
+export interface Document {
+  id: string;
+  name: string;
+  image: string | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products".
+ */
+export interface Product {
+  id: string;
+  name: string;
+  image: string | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services".
+ */
+export interface Service {
   id: string;
   title: string;
   excerpt?: string | null;
@@ -154,49 +251,6 @@ export interface Blog {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
- */
-export interface Media {
-  id: string;
-  alt: string;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
- */
-export interface User {
-  id: string;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "portofolio".
  */
 export interface Portofolio {
@@ -208,20 +262,9 @@ export interface Portofolio {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "products".
+ * via the `definition` "blogs".
  */
-export interface Product {
-  id: string;
-  name: string;
-  image: string | Media;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "services".
- */
-export interface Service {
+export interface Blog {
   id: string;
   title: string;
   excerpt?: string | null;
@@ -271,10 +314,6 @@ export interface PayloadLockedDocument {
   id: string;
   document?:
     | ({
-        relationTo: 'blogs';
-        value: string | Blog;
-      } | null)
-    | ({
         relationTo: 'users';
         value: string | User;
       } | null)
@@ -283,8 +322,12 @@ export interface PayloadLockedDocument {
         value: string | Media;
       } | null)
     | ({
-        relationTo: 'portofolio';
-        value: string | Portofolio;
+        relationTo: 'companies';
+        value: string | Company;
+      } | null)
+    | ({
+        relationTo: 'documents';
+        value: string | Document;
       } | null)
     | ({
         relationTo: 'products';
@@ -293,6 +336,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'services';
         value: string | Service;
+      } | null)
+    | ({
+        relationTo: 'portofolio';
+        value: string | Portofolio;
+      } | null)
+    | ({
+        relationTo: 'blogs';
+        value: string | Blog;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -338,23 +389,10 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "blogs_select".
- */
-export interface BlogsSelect<T extends boolean = true> {
-  title?: T;
-  excerpt?: T;
-  content?: T;
-  featuredImg?: T;
-  author?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  role?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -392,10 +430,20 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "portofolio_select".
+ * via the `definition` "companies_select".
  */
-export interface PortofolioSelect<T extends boolean = true> {
-  tag?: T;
+export interface CompaniesSelect<T extends boolean = true> {
+  name?: T;
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "documents_select".
+ */
+export interface DocumentsSelect<T extends boolean = true> {
+  name?: T;
   image?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -415,6 +463,30 @@ export interface ProductsSelect<T extends boolean = true> {
  * via the `definition` "services_select".
  */
 export interface ServicesSelect<T extends boolean = true> {
+  title?: T;
+  excerpt?: T;
+  content?: T;
+  featuredImg?: T;
+  author?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portofolio_select".
+ */
+export interface PortofolioSelect<T extends boolean = true> {
+  tag?: T;
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blogs_select".
+ */
+export interface BlogsSelect<T extends boolean = true> {
   title?: T;
   excerpt?: T;
   content?: T;
@@ -463,6 +535,244 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-us-page".
+ */
+export interface AboutUsPage {
+  id: string;
+  about_us_hero?: (string | null) | Media;
+  about_us_hero_heading?: string | null;
+  about_us_hero_description?: string | null;
+  about_us_our_company_heading?: string | null;
+  about_us_description_left?: string | null;
+  about_us_description_right?: string | null;
+  about_us_vision_heading?: string | null;
+  about_us_vision_description?: string | null;
+  about_us_mission_heading?: string | null;
+  about_us_mission_description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  about_us_our_culture_heading?: string | null;
+  about_us_our_culture_description?: string | null;
+  about_us_legal_heading?: string | null;
+  about_us_legal_subtitle?: string | null;
+  about_us_legal_descriptions?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "insights-page".
+ */
+export interface InsightsPage {
+  id: string;
+  insights_hero?: (string | null) | Media;
+  insights_hero_heading?: string | null;
+  insights_hero_description?: string | null;
+  blog_section_heading?: string | null;
+  blog_section_description?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "landing-page".
+ */
+export interface LandingPage {
+  id: string;
+  landing_hero?: (string | null) | Media;
+  hero_heading?: string | null;
+  hero_description?: string | null;
+  top_card_heading?: string | null;
+  top_card_description?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portofolio-page".
+ */
+export interface PortofolioPage {
+  id: string;
+  portofolio_hero?: (string | null) | Media;
+  portofolio_hero_heading?: string | null;
+  portofolio_hero_description?: string | null;
+  portofolio_project_heading?: string | null;
+  portofolio_project_description?: string | null;
+  portofolio_1?: (string | null) | Media;
+  portofolio_2?: (string | null) | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "solutions-page".
+ */
+export interface SolutionsPage {
+  id: string;
+  solutions_hero?: (string | null) | Media;
+  solutions_hero_heading?: string | null;
+  solutions_hero_description?: string | null;
+  solutions_services_heading?: string | null;
+  solutions_services_description?: string | null;
+  solutions_products_heading?: string | null;
+  solutions_products_description?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer-config".
+ */
+export interface FooterConfig {
+  id: string;
+  footer_heading?: string | null;
+  footer_description?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "logo-config".
+ */
+export interface LogoConfig {
+  id: string;
+  logo?: (string | null) | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-us-page_select".
+ */
+export interface AboutUsPageSelect<T extends boolean = true> {
+  about_us_hero?: T;
+  about_us_hero_heading?: T;
+  about_us_hero_description?: T;
+  about_us_our_company_heading?: T;
+  about_us_description_left?: T;
+  about_us_description_right?: T;
+  about_us_vision_heading?: T;
+  about_us_vision_description?: T;
+  about_us_mission_heading?: T;
+  about_us_mission_description?: T;
+  about_us_our_culture_heading?: T;
+  about_us_our_culture_description?: T;
+  about_us_legal_heading?: T;
+  about_us_legal_subtitle?: T;
+  about_us_legal_descriptions?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "insights-page_select".
+ */
+export interface InsightsPageSelect<T extends boolean = true> {
+  insights_hero?: T;
+  insights_hero_heading?: T;
+  insights_hero_description?: T;
+  blog_section_heading?: T;
+  blog_section_description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "landing-page_select".
+ */
+export interface LandingPageSelect<T extends boolean = true> {
+  landing_hero?: T;
+  hero_heading?: T;
+  hero_description?: T;
+  top_card_heading?: T;
+  top_card_description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portofolio-page_select".
+ */
+export interface PortofolioPageSelect<T extends boolean = true> {
+  portofolio_hero?: T;
+  portofolio_hero_heading?: T;
+  portofolio_hero_description?: T;
+  portofolio_project_heading?: T;
+  portofolio_project_description?: T;
+  portofolio_1?: T;
+  portofolio_2?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "solutions-page_select".
+ */
+export interface SolutionsPageSelect<T extends boolean = true> {
+  solutions_hero?: T;
+  solutions_hero_heading?: T;
+  solutions_hero_description?: T;
+  solutions_services_heading?: T;
+  solutions_services_description?: T;
+  solutions_products_heading?: T;
+  solutions_products_description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer-config_select".
+ */
+export interface FooterConfigSelect<T extends boolean = true> {
+  footer_heading?: T;
+  footer_description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "logo-config_select".
+ */
+export interface LogoConfigSelect<T extends boolean = true> {
+  logo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
