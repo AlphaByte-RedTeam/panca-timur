@@ -53,13 +53,12 @@ const Navbar = () => {
           <MotionLink
             href={'/detail-about-us'}
             whileHover={{
-              scale: 1.03,
               color: '#0070c0',
               translateY: -2,
               textDecoration: 'underline',
             }}
-            whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            whileTap={{ color: '#0070c0', textDecoration: 'underline' }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
             className="flex items-center"
             aria-label="ke halaman about us"
           >
@@ -68,13 +67,12 @@ const Navbar = () => {
           <MotionLink
             href={'/detail-solutions'}
             whileHover={{
-              scale: 1.03,
               color: '#0070c0',
               translateY: -2,
               textDecoration: 'underline',
             }}
-            whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            whileTap={{ color: '#0070c0', textDecoration: 'underline' }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
             className="flex items-center"
             aria-label="ke halaman solutions"
           >
@@ -83,13 +81,12 @@ const Navbar = () => {
           <MotionLink
             href={'/detail-portfolio'}
             whileHover={{
-              scale: 1.03,
               color: '#0070c0',
               translateY: -2,
               textDecoration: 'underline',
             }}
-            whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            whileTap={{ color: '#0070c0', textDecoration: 'underline' }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
             className="flex items-center"
             aria-label="ke halaman portfolio"
           >
@@ -98,13 +95,12 @@ const Navbar = () => {
           <MotionLink
             href={'/detail-insights-updates'}
             whileHover={{
-              scale: 1.03,
               color: '#0070c0',
               translateY: -2,
               textDecoration: 'underline',
             }}
-            whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            whileTap={{ color: '#0070c0', textDecoration: 'underline' }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
             className="flex items-center"
             aria-label="ke halaman insights updates"
           >
@@ -148,13 +144,12 @@ const Navbar = () => {
               href={'/detail-about-us'}
               onClick={() => setIsOpen(false)}
               whileHover={{
-                scale: 1.03,
                 color: '#0070c0',
                 translateY: -2,
                 textDecoration: 'underline',
               }}
-              whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              whileTap={{ color: '#0070c0', textDecoration: 'underline' }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
             >
               About Us
             </MotionLink>
@@ -162,13 +157,12 @@ const Navbar = () => {
               href={'/detail-solutions'}
               onClick={() => setIsOpen(false)}
               whileHover={{
-                scale: 1.03,
                 color: '#0070c0',
                 translateY: -2,
                 textDecoration: 'underline',
               }}
-              whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              whileTap={{ color: '#0070c0', textDecoration: 'underline' }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
             >
               Solutions
             </MotionLink>
@@ -176,13 +170,12 @@ const Navbar = () => {
               href={'/detail-portfolio'}
               onClick={() => setIsOpen(false)}
               whileHover={{
-                scale: 1.03,
                 color: '#0070c0',
                 translateY: -2,
                 textDecoration: 'underline',
               }}
-              whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              whileTap={{ color: '#0070c0', textDecoration: 'underline' }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
             >
               Portfolio
             </MotionLink>
@@ -190,13 +183,12 @@ const Navbar = () => {
               href={'/detail-insights-updates'}
               onClick={() => setIsOpen(false)}
               whileHover={{
-                scale: 1.03,
                 color: '#0070c0',
                 translateY: -2,
                 textDecoration: 'underline',
               }}
-              whileTap={{ scale: 0.97, color: '#0070c0', textDecoration: 'underline' }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              whileTap={{ color: '#0070c0', textDecoration: 'underline' }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
             >
               Insights & Updates
             </MotionLink>

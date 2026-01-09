@@ -43,7 +43,7 @@ const Footer = () => {
             Malang, Jawa Timur Representative Office:Perumahan Masnaga Jalan Gunung Kerinci 1 Blok A
             No.873 Bintara, Bekasi Barat
           </p>
-          <p className="text-[8px] font-[400] text-[#747775] mt-[43px]">
+          <p className="hidden md:block text-[8px] font-[400] text-[#747775] mt-[43px]">
             @ Copyright 2025. All Rights Reserved.
           </p>
         </div>
@@ -78,6 +78,9 @@ const Footer = () => {
             </Link>
           </div>
           <p className="text-[12px] font-[400]">Mechanical Electrical • Plumbing Contractor</p>
+          <p className="block md:hidden text-[8px] font-[400] text-[#747775] mt-[12px]">
+            @ Copyright 2025. All Rights Reserved.
+          </p>
         </div>
       </div>
     </div>

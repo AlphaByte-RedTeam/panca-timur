@@ -98,7 +98,7 @@ export default function InsightsUpdatesPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, type: 'spring' }}
+            transition={{ duration: 0.7, type: 'spring' }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[332px] md:w-[699px] md:h-[236px] lg:w-[945px] lg:h-[306px] overflow-hidden flex flex-col md:flex-row md:gap-[16px] lg:gap-[32px] md:mb-[20px] lg:mb-[44px]">
@@ -167,7 +167,7 @@ export default function InsightsUpdatesPage() {
                         </DialogTitle>
 
                         <p className="alternative">DD-MM-YYYY</p>
-                        <DialogDescription className="p text-left">
+                        <DialogDescription className="text-md text-left">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                           tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
                           amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -202,7 +202,7 @@ export default function InsightsUpdatesPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, type: 'spring' }}
+            transition={{ duration: 0.7, type: 'spring' }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="w-[332px] md:w-[699px] md:h-[236px] lg:w-[945px] lg:h-[306px] overflow-hidden flex flex-col md:flex-row md:gap-[16px] lg:gap-[32px] md:mb-[20px] lg:mb-[44px] mt-4 md:mt-0">
@@ -271,7 +271,7 @@ export default function InsightsUpdatesPage() {
                         </DialogTitle>
 
                         <p className="alternative">DD-MM-YYYY</p>
-                        <DialogDescription className="p text-left">
+                        <DialogDescription className="text-md text-left">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                           tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
                           amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

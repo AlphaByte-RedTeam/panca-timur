@@ -17,6 +17,21 @@ export const metadata: Metadata = {
   icons: {
     icon: 'dokumPancaTimurR/logo.jpg',
   },
+  openGraph: {
+    title: 'Panca Timur Raya',
+    description:
+      'Solusi konstruksi Mechanical, Electrical, dan Plumbing (MEP) profesional dan terpercaya.',
+    images: [
+      {
+        url: '/dokumPancaTimurR/logo.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Logo Panca Timur Raya',
+      },
+    ],
+    type: 'website',
+    locale: 'id_ID',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
