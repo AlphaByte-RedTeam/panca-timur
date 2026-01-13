@@ -6,6 +6,9 @@ export const Services: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
   },
+  access: {
+    read: () => true,
+  },
   labels: {
     singular: {
       id: 'Layanan',

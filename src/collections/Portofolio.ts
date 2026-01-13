@@ -5,6 +5,9 @@ export const Portofolio: CollectionConfig = {
   admin: {
     useAsTitle: 'tag',
   },
+  access: {
+    read: () => true,
+  },
   labels: {
     singular: {
       id: 'Portofolio',

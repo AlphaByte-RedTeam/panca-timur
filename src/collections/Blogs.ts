@@ -1,12 +1,4 @@
-import {
-  BoldFeature,
-  HeadingFeature,
-  ItalicFeature,
-  lexicalEditor,
-  LinkFeature,
-  ParagraphFeature,
-  UnderlineFeature,
-} from '@payloadcms/richtext-lexical'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { CollectionConfig } from 'payload'
 
 interface TextNode {

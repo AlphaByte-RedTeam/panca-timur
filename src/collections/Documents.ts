@@ -5,6 +5,9 @@ export const Documents: CollectionConfig = {
   admin: {
     useAsTitle: 'name',
   },
+  access: {
+    read: () => true,
+  },
   labels: {
     singular: {
       id: 'Surat surat',
