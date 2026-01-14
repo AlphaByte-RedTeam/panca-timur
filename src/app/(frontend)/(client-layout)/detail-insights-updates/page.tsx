@@ -55,14 +55,6 @@ export default function InsightsUpdatesPage() {
     },
   })
 
-  useEffect(() => {
-    if (query.data) {
-      console.log(query.data)
-    } else {
-      console.log('fail')
-    }
-  }, [query.isLoading])
-
   return (
     <>
       <Navbar />
@@ -142,12 +134,23 @@ export default function InsightsUpdatesPage() {
                 >
                   <Card className="w-[332px] md:w-[699px] md:h-[236px] lg:w-[945px] lg:h-[306px] overflow-hidden flex flex-col md:flex-row md:gap-[16px] lg:gap-[32px] md:mb-[20px] lg:mb-[44px]">
                     <div className="relative w-full h-[280px] md:w-[280px] md:h-[236px] lg:w-[400px] lg:h-[306px] flex-shrink-0">
-                      <Image
-                        src={data.featuredImg?.url ?? "/dokumPancaTimurR/mechanicalplumbing3.jpg"}
-                        alt="Image Service Mechanical & Plumbing"
-                        fill
-                        className="object-cover p-4"
-                      />
+                      {typeof data.featuredImg === 'string' ? (
+                        <Image
+                          src={data.featuredImg}
+                          alt={data.featuredImg}
+                          fill
+                          className="object-cover p-4"
+                        />
+                      ) : (
+                        <Image
+                          src={
+                            data?.featuredImg?.url ?? '/dokumPancaTimurR/mechanicalplumbing3.jpg'
+                          }
+                          alt={data.featuredImg?.alt ?? 'Gambar Sampul'}
+                          fill
+                          className="object-cover p-4"
+                        />
+                      )}
                     </div>
 
                     <div className="flex flex-col flex-1 -mt-8 md:mt-0 pb-3 px-[16px]">
