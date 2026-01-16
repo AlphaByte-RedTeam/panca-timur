@@ -22,11 +22,6 @@ import { Dialog, DialogTrigger, DialogContent, DialogTitle } from '@/components/
 import Footer from '../components/footer'
 
 import { motion } from 'motion/react'
-// import { Metadata } from 'next'
-
-// export const metadata: Metadata = {
-//   title: 'About Us Page | Panca Timur Raya',
-// }
 
 export default function AboutUsPage() {
   const handleBookaConsultation = () => {
