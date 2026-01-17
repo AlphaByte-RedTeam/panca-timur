@@ -28,6 +28,7 @@ export const AboutUsConfig: GlobalConfig = {
         {
           name: 'about_us_hero',
           type: 'upload',
+          required: true,
           relationTo: 'media',
           label: {
             id: 'Gambar About Us Page',
@@ -209,6 +210,48 @@ export const AboutUsConfig: GlobalConfig = {
               },
             },
           }),
+        },
+        {
+          type: 'collapsible',
+          label: {
+            id: 'Dokumen Legal',
+            en: 'Legal Documents',
+          },
+          admin: {
+            initCollapsed: true,
+          },
+          fields: [
+            {
+              name: 'about_us_legal_document_1',
+              type: 'upload',
+              relationTo: 'media',
+              required: true,
+              label: {
+                id: 'Dokumen Perusahaan Perizinan Berusaha Berbasis Resiko',
+                en: 'Risk based Company Permit',
+              },
+            },
+            {
+              name: 'about_us_legal_document_2',
+              type: 'upload',
+              relationTo: 'media',
+              required: true,
+              label: {
+                id: 'Dokumen Akta Pendirian Perseoran Terbatas',
+                en: 'Deed of Establishment Document',
+              },
+            },
+            {
+              name: 'about_us_legal_document_3',
+              type: 'upload',
+              relationTo: 'media',
+              required: true,
+              label: {
+                id: 'Dokumen Akta Pengesahan Badan Hukum',
+                en: 'Deed of Incorporation Document',
+              },
+            },
+          ],
         },
       ],
     },

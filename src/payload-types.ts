@@ -542,7 +542,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface AboutUsPage {
   id: string;
-  about_us_hero?: (string | null) | Media;
+  about_us_hero: string | Media;
   about_us_hero_heading?: string | null;
   about_us_hero_description?: string | null;
   about_us_our_company_heading?: string | null;
@@ -585,6 +585,9 @@ export interface AboutUsPage {
     };
     [k: string]: unknown;
   } | null;
+  about_us_legal_document_1: string | Media;
+  about_us_legal_document_2: string | Media;
+  about_us_legal_document_3: string | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -689,6 +692,9 @@ export interface AboutUsPageSelect<T extends boolean = true> {
   about_us_legal_heading?: T;
   about_us_legal_subtitle?: T;
   about_us_legal_descriptions?: T;
+  about_us_legal_document_1?: T;
+  about_us_legal_document_2?: T;
+  about_us_legal_document_3?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
