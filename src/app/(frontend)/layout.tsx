@@ -6,6 +6,7 @@ import Footer from './(client-layout)/components/footer'
 
 import config from '@payload-config'
 import { getPayload } from 'payload'
+import { PhoneNumberProvider } from './providers/phone-number.provider'
 
 const payload = await getPayload({ config })
 
@@ -45,15 +46,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const config = await payload.findGlobal({
     slug: 'site-config',
   })
-  const footerConfig = await payload.findGlobal({
-    slug: 'footer-config',
-  })
+
   return (
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
-        <Navbar config={config} />
-        {children}
-        <Footer globalConfig={config} textConfig={footerConfig} />
+        <PhoneNumberProvider value={config.phone}>
+          <Navbar config={config} />
+          {children}
+          <Footer globalConfig={config} />
+        </PhoneNumberProvider>
       </body>
     </html>
   )

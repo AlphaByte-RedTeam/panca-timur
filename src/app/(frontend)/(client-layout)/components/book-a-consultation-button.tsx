@@ -1,11 +1,13 @@
 'use client'
 import { Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { usePhoneContext } from '../../providers/phone-number.provider'
 
 export const BookAConsultationButton = () => {
+  const phone = usePhoneContext()
   const handleBookaConsultation = () => {
     const pesan = `Halo, saya ingin menanyakan ...`
-    const url = `https://wa.me/6281394056196?text=${encodeURIComponent(pesan)}`
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(pesan)}`
     window.open(url, '_blank')
   }
   return (
@@ -21,9 +23,10 @@ export const BookAConsultationButton = () => {
 }
 
 export const ContactUsButton = () => {
+  const phone = usePhoneContext()
   const handleBookaConsultation = () => {
     const pesan = `Halo, saya ingin menanyakan ...`
-    const url = `https://wa.me/6281394056196?text=${encodeURIComponent(pesan)}`
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(pesan)}`
     window.open(url, '_blank')
   }
   return (
@@ -40,9 +43,10 @@ export const ContactUsButton = () => {
 }
 
 export const ContactUsButtonMobile = () => {
+  const phone = usePhoneContext()
   const handleBookaConsultation = () => {
     const pesan = `Halo, saya ingin menanyakan ...`
-    const url = `https://wa.me/6281394056196?text=${encodeURIComponent(pesan)}`
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(pesan)}`
     window.open(url, '_blank')
   }
   return (
