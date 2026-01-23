@@ -53,7 +53,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <PhoneNumberProvider value={config.phone}>
           <Navbar config={config} />
           {children}
-          <Footer globalConfig={config} />
+          <Footer config={config} />
         </PhoneNumberProvider>
       </body>
     </html>
