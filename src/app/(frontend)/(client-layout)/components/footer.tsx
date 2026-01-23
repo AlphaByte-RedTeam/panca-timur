@@ -1,6 +1,6 @@
 'use client'
 
-import { FooterConfig, SiteConfig } from '@/payload-types'
+import { SiteConfig } from '@/payload-types'
 import { Mail, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +8,6 @@ import { BookAConsultationButton } from './book-a-consultation-button'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 
 const Footer = ({ config }: { config: SiteConfig }) => {
-  console.log(config)
   return (
     <div className="">
       <div className="mt-6 flex flex-col  bg-[linear-gradient(180deg,_#10385D_0%,_#0070C0_52.88%,_#E1E1E1_100%)] mx-6 rounded-[8px] justify-center items-center gap-[32px] lg:gap-[32px] py-[40px] px-[20px] md:py-[54px] md:px-[80px] lg:py-[90px] lg:px-[180px]">
