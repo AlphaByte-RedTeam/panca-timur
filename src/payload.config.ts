@@ -22,8 +22,7 @@ import { InsightsConfig } from './globals/insights-page'
 import { LandingConfig } from './globals/landing-page'
 import { PortofolioConfig } from './globals/portofolio-page'
 import { SolutionsConfig } from './globals/solutions-page'
-import { FooterConfig } from './globals/footer'
-import { SiteConfig } from './globals/logo'
+import { SiteConfig } from './globals/site-config'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -42,7 +41,6 @@ export default buildConfig({
     LandingConfig,
     PortofolioConfig,
     SolutionsConfig,
-    FooterConfig,
     SiteConfig,
   ],
   i18n: {

@@ -104,7 +104,6 @@ export interface Config {
     'landing-page': LandingPage;
     'portofolio-page': PortofolioPage;
     'solutions-page': SolutionsPage;
-    'footer-config': FooterConfig;
     'site-config': SiteConfig;
   };
   globalsSelect: {
@@ -113,7 +112,6 @@ export interface Config {
     'landing-page': LandingPageSelect<false> | LandingPageSelect<true>;
     'portofolio-page': PortofolioPageSelect<false> | PortofolioPageSelect<true>;
     'solutions-page': SolutionsPageSelect<false> | SolutionsPageSelect<true>;
-    'footer-config': FooterConfigSelect<false> | FooterConfigSelect<true>;
     'site-config': SiteConfigSelect<false> | SiteConfigSelect<true>;
   };
   locale: null;
@@ -653,17 +651,6 @@ export interface SolutionsPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "footer-config".
- */
-export interface FooterConfig {
-  id: string;
-  footer_heading?: string | null;
-  footer_description?: string | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-config".
  */
 export interface SiteConfig {
@@ -685,6 +672,8 @@ export interface SiteConfig {
     [k: string]: unknown;
   };
   phone: string;
+  footer_heading?: string | null;
+  footer_description?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -777,23 +766,14 @@ export interface SolutionsPageSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "footer-config_select".
- */
-export interface FooterConfigSelect<T extends boolean = true> {
-  footer_heading?: T;
-  footer_description?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-config_select".
  */
 export interface SiteConfigSelect<T extends boolean = true> {
   logo?: T;
   address?: T;
   phone?: T;
+  footer_heading?: T;
+  footer_description?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
