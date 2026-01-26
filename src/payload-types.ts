@@ -265,7 +265,7 @@ export interface Portofolio {
 export interface Blog {
   id: string;
   title: string;
-  excerpt?: string | null;
+  excerpt: string;
   content: {
     root: {
       type: string;
@@ -595,7 +595,7 @@ export interface AboutUsPage {
  */
 export interface InsightsPage {
   id: string;
-  insights_hero?: (string | null) | Media;
+  insights_hero: string | Media;
   insights_hero_heading?: string | null;
   insights_hero_description?: string | null;
   blog_section_heading?: string | null;
@@ -625,7 +625,7 @@ export interface LandingPage {
  */
 export interface PortofolioPage {
   id: string;
-  portofolio_hero?: (string | null) | Media;
+  portofolio_hero: string | Media;
   portofolio_hero_heading?: string | null;
   portofolio_hero_description?: string | null;
   portofolio_project_heading?: string | null;
@@ -639,7 +639,7 @@ export interface PortofolioPage {
  */
 export interface SolutionsPage {
   id: string;
-  solutions_hero?: (string | null) | Media;
+  solutions_hero: string | Media;
   solutions_hero_heading?: string | null;
   solutions_hero_description?: string | null;
   solutions_services_heading?: string | null;
