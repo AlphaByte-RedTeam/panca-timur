@@ -28,6 +28,7 @@ export const PortofolioConfig: GlobalConfig = {
           name: 'portofolio_hero',
           type: 'upload',
           relationTo: 'media',
+          required: true,
           label: {
             id: 'Gambar Portofolio Page',
             en: 'Portofolio Page Picture',

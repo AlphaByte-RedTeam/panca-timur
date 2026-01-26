@@ -44,6 +44,7 @@ export const Blogs: CollectionConfig = {
     {
       name: 'excerpt',
       type: 'textarea',
+      required: true,
       admin: {
         placeholder: {
           id: 'Akan dibuat otomatis setelah blog disimpan',

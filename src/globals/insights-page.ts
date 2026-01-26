@@ -18,6 +18,7 @@ export const InsightsConfig: GlobalConfig = {
       name: 'insights_hero',
       type: 'upload',
       relationTo: 'media',
+      required: true,
       label: {
         id: 'Gambar Insights Page',
         en: 'Insights Page Picture',

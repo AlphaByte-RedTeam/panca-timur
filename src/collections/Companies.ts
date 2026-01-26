@@ -18,8 +18,6 @@ export const Companies: CollectionConfig = {
       en: 'Companies',
     },
   },
-
-  auth: false,
   fields: [
     {
       name: 'name',

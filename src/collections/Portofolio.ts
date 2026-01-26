@@ -18,7 +18,6 @@ export const Portofolio: CollectionConfig = {
       en: 'Portofolios',
     },
   },
-  auth: false,
   fields: [
     {
       name: 'tag',

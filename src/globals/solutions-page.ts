@@ -28,6 +28,7 @@ export const SolutionsConfig: GlobalConfig = {
           name: 'solutions_hero',
           type: 'upload',
           relationTo: 'media',
+          required: true,
           label: {
             id: 'Gambar Solutions Page',
             en: 'Solutions Page Picture',

@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-
+// TODO : consider 
 export const Documents: CollectionConfig = {
   slug: 'documents',
   admin: {
