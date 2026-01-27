@@ -24,6 +24,12 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   if (!blog) {
     notFound()
   }
+  const formattedDate =
+    String(new Date(blog.updatedAt).getDate()).padStart(2, '0') +
+    '-' +
+    String(new Date(blog.updatedAt).getMonth() + 1).padStart(2, '0') +
+    '-' +
+    String(new Date(blog.updatedAt).getFullYear()).slice(-2)
 
   return (
     <div className="flex-1 overflow-y-auto">
@@ -56,7 +62,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
           </BreadcrumbList>
         </Breadcrumb>
         <h1 className="titleh1 text-[#0062B0] ">{blog.title}</h1>
-        <p className="alternative py-5">{new Date(blog.updatedAt).toLocaleString('id-ID')}</p>
+        <p className="alternative py-5">{formattedDate}</p>
         <RichText data={blog.content} className="" />
       </div>
     </div>

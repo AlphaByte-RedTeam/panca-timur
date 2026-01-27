@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { resendAdapter } from '@payloadcms/email-resend'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
@@ -35,6 +36,11 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Companies, Documents, Products, Services, Portofolio, Blogs],
+  email: resendAdapter({
+    defaultFromAddress: 'noreply@team37.co',
+    defaultFromName: 'Resend',
+    apiKey: process.env.RESEND_API_KEY || '',
+  }),
   globals: [
     AboutUsConfig,
     InsightsConfig,

@@ -98,6 +98,7 @@ export interface Config {
   db: {
     defaultIDType: string;
   };
+  fallbackLocale: null;
   globals: {
     'about-us-page': AboutUsPage;
     'insights-page': InsightsPage;
