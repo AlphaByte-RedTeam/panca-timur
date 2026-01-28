@@ -8,35 +8,27 @@ import { useQuery } from '@tanstack/react-query'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import React from 'react'
+import { useWindowWidth } from '../../hooks/use-window-width'
 
 export const ProductsGrid = ({ isForLandingPage = false }: { isForLandingPage?: boolean }) => {
   const sdk = new PayloadSDK<Config>({
     baseURL: '/api',
   })
-  // let limit = 0
-  // if (isForLandingPage) {
-  //   limit = 6
-  // }
+  // undefined limit = to the end
   const [limit, setLimit] = React.useState<number | undefined>(undefined)
+  const windowWidth = useWindowWidth()
 
   React.useEffect(() => {
-    if (!isForLandingPage) return
-    if (window.innerWidth >= 1024) {
+    if (!isForLandingPage || windowWidth === undefined) return
+    if (windowWidth >= 1024) {
       setLimit(6)
-    } else {
+    } else if (windowWidth >= 768) {
       setLimit(4)
+    } else {
+      setLimit(2)
     }
-  }, [isForLandingPage])
+  }, [isForLandingPage, windowWidth])
 
-  // const queryProducts = useQuery({
-  //   queryKey: ['solutions-products'],
-  //   queryFn: async () => {
-  //     return await sdk.find({
-  //       collection: 'products',
-  //       limit: limit,
-  //     })
-  //   },
-  // })
   const queryProducts = useQuery({
     queryKey: ['solutions-products', limit],
     enabled: limit !== undefined,
@@ -63,7 +55,7 @@ export const ProductsGrid = ({ isForLandingPage = false }: { isForLandingPage?: 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[41px] justify-items-center">
       {queryProducts.data ? (
-        queryProducts.data.docs.map((data) => (
+        queryProducts.data.docs.slice(0, limit).map((data) => (
           <motion.div
             key={data.id}
             initial={{ opacity: 0.5, scale: 0.5 }}
@@ -93,8 +85,8 @@ export const ProductsGrid = ({ isForLandingPage = false }: { isForLandingPage?: 
       ) : (
         <>
           <Skeleton className="bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
-          <Skeleton className="bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
-          <Skeleton className="bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
+          <Skeleton className="hidden md:block bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
+          <Skeleton className="hidden lg:block bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
         </>
       )}
     </div>

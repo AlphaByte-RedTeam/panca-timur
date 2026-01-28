@@ -5,6 +5,7 @@ import { motion } from 'motion/react'
 import { Button } from '@/components/ui/button'
 import { RefreshCcw } from 'lucide-react'
 import React from 'react'
+import { useWindowWidth } from '../../hooks/use-window-width'
 
 type GalleryItem = {
   src: string
@@ -14,17 +15,20 @@ type GalleryItem = {
 export default function GalleryAll({ items }: { items: GalleryItem[] }) {
   const [visibleCount, setVisibleCount] = React.useState(6)
   const [increment, setIncrement] = React.useState(3)
+  const windowWidth = useWindowWidth()
 
   React.useEffect(() => {
-    const updateIncrement = () => {
-      if (window.innerWidth >= 1280) {
+    if (windowWidth !== undefined) {
+      if (windowWidth < 1280) {
+        setIncrement(2)
+      } else if (visibleCount % 3 !== 0) {
+        setVisibleCount(visibleCount + (3 - (visibleCount % 3)))
         setIncrement(3)
       } else {
-        setIncrement(2)
+        setIncrement(3)
       }
     }
-    updateIncrement()
-  }, [])
+  }, [windowWidth])
 
   return (
     <>

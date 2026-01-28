@@ -157,8 +157,8 @@ export const ServicesCarousel = () => {
         ) : (
           <>
             <Skeleton className="bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
-            <Skeleton className="bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
-            <Skeleton className="bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
+            <Skeleton className="hidden md:block bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
+            <Skeleton className="hidden lg:block bg-gray-100 mx-auto h-[400px] w-[294px] xl:w-[363px]" />
           </>
         )}
       </CarouselContent>
