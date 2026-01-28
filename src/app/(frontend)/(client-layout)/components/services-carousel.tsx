@@ -100,8 +100,8 @@ export const ServicesCarousel = () => {
                       <p className="alternative">{data.excerpt}</p>
                     </CardContent>
                     <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="w-full p-4 md:-mt-2">
+                      <div className="w-full p-4 md:-mt-2">
+                        <DialogTrigger asChild>
                           <Button
                             className="w-full "
                             variant="secondary"
@@ -110,8 +110,8 @@ export const ServicesCarousel = () => {
                             Learn More
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Button>
-                        </div>
-                      </DialogTrigger>
+                        </DialogTrigger>
+                      </div>
                       <DialogContent className="w-[350px] h-[600px] md:w-[650px] md:h-[405px] lg:w-[950px] lg:h-[550px] p-0 flex flex-col md:flex-row">
                         <div
                           className="relative w-full h-[557px] md:flex-1 md:h-full overflow-hidden     rounded-tl-[8px] rounded-tr-[8px]
