@@ -13,6 +13,18 @@ type GalleryItem = {
 
 export default function GalleryAll({ items }: { items: GalleryItem[] }) {
   const [visibleCount, setVisibleCount] = React.useState(6)
+  const [increment, setIncrement] = React.useState(3)
+
+  React.useEffect(() => {
+    const updateIncrement = () => {
+      if (window.innerWidth >= 1280) {
+        setIncrement(3)
+      } else {
+        setIncrement(2)
+      }
+    }
+    updateIncrement()
+  }, [])
 
   return (
     <>
@@ -35,7 +47,7 @@ export default function GalleryAll({ items }: { items: GalleryItem[] }) {
           <Button
             variant="secondary"
             className="w-full lg:w-[243px]"
-            onClick={() => setVisibleCount((prev) => prev + 3)}
+            onClick={() => setVisibleCount((prev) => prev + increment)}
             aria-label="Muat foto lebih banyak"
           >
             Load More

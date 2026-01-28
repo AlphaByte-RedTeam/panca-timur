@@ -7,17 +7,39 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { useQuery } from '@tanstack/react-query'
 import { motion } from 'motion/react'
 import Image from 'next/image'
+import React from 'react'
 
 export const ProductsGrid = ({ isForLandingPage = false }: { isForLandingPage?: boolean }) => {
   const sdk = new PayloadSDK<Config>({
     baseURL: '/api',
   })
-  let limit = 0
-  if (isForLandingPage) {
-    limit = 6
-  }
+  // let limit = 0
+  // if (isForLandingPage) {
+  //   limit = 6
+  // }
+  const [limit, setLimit] = React.useState<number | undefined>(undefined)
+
+  React.useEffect(() => {
+    if (!isForLandingPage) return
+    if (window.innerWidth >= 1024) {
+      setLimit(6)
+    } else {
+      setLimit(4)
+    }
+  }, [isForLandingPage])
+
+  // const queryProducts = useQuery({
+  //   queryKey: ['solutions-products'],
+  //   queryFn: async () => {
+  //     return await sdk.find({
+  //       collection: 'products',
+  //       limit: limit,
+  //     })
+  //   },
+  // })
   const queryProducts = useQuery({
-    queryKey: ['solutions-products'],
+    queryKey: ['solutions-products', limit],
+    enabled: limit !== undefined,
     queryFn: async () => {
       return await sdk.find({
         collection: 'products',
@@ -25,6 +47,7 @@ export const ProductsGrid = ({ isForLandingPage = false }: { isForLandingPage?: 
       })
     },
   })
+
   if (queryProducts.error) {
     return (
       <Card className="flex flex-col m-2 mx-6">
