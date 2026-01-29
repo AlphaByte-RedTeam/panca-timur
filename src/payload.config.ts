@@ -38,7 +38,7 @@ export default buildConfig({
   collections: [Users, Media, Companies, Documents, Products, Services, Portofolio, Blogs],
   email: resendAdapter({
     defaultFromAddress: 'noreply@team37.co',
-    defaultFromName: 'Resend',
+    defaultFromName: 'Reset Password (noreply)',
     apiKey: process.env.RESEND_API_KEY || '',
   }),
   globals: [
@@ -50,7 +50,7 @@ export default buildConfig({
     SiteConfig,
   ],
   i18n: {
-    supportedLanguages: { en, id },
+    supportedLanguages: { id, en },
     fallbackLanguage: 'id',
     translations: {
       id: {
@@ -90,6 +90,7 @@ export default buildConfig({
       },
     },
   },
+
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
