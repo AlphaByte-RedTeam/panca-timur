@@ -33,7 +33,7 @@ const AboutUs = ({ config }: { config: AboutUsPage }) => {
             alt={config.about_us_hero}
             fill
             priority
-            loading="eager"
+            unoptimized
             className="object-cover"
           />
         ) : (
@@ -42,7 +42,7 @@ const AboutUs = ({ config }: { config: AboutUsPage }) => {
             alt={config.about_us_hero?.alt ?? 'Gambar Sampul'}
             fill
             priority
-            loading="eager"
+            unoptimized
             className="object-cover"
           />
         )}
@@ -261,6 +261,7 @@ const AboutUs = ({ config }: { config: AboutUsPage }) => {
                           src={config.about_us_legal_document_1}
                           alt={config.about_us_legal_document_1}
                           fill
+                          unoptimized
                           className="object-contain"
                         />
                       ) : (
@@ -274,6 +275,7 @@ const AboutUs = ({ config }: { config: AboutUsPage }) => {
                             'Dokumen Perusahaan Perizinan Berusaha Berbasis Resiko'
                           }
                           fill
+                          unoptimized
                           className="object-contain"
                         />
                       )}
@@ -309,6 +311,7 @@ const AboutUs = ({ config }: { config: AboutUsPage }) => {
                           src={config.about_us_legal_document_2}
                           alt={config.about_us_legal_document_2}
                           fill
+                          unoptimized
                           className="object-contain"
                         />
                       ) : (
@@ -322,6 +325,7 @@ const AboutUs = ({ config }: { config: AboutUsPage }) => {
                             'Dokumen Perusahaan Akta Pendirian Perseoran Terbatas'
                           }
                           fill
+                          unoptimized
                           className="object-contain"
                         />
                       )}
@@ -357,6 +361,7 @@ const AboutUs = ({ config }: { config: AboutUsPage }) => {
                           src={config.about_us_legal_document_3}
                           alt={config.about_us_legal_document_3}
                           fill
+                          unoptimized
                           className="object-contain"
                         />
                       ) : (
@@ -370,6 +375,7 @@ const AboutUs = ({ config }: { config: AboutUsPage }) => {
                             'Dokumen Perusahaan Akta Pengesahan Badan Hukum'
                           }
                           fill
+                          unoptimized
                           className="object-contain"
                         />
                       )}

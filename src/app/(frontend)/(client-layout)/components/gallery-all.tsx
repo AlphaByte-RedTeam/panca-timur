@@ -28,7 +28,7 @@ export default function GalleryAll({ items }: { items: GalleryItem[] }) {
         setIncrement(3)
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [windowWidth])
 
   return (
@@ -42,7 +42,7 @@ export default function GalleryAll({ items }: { items: GalleryItem[] }) {
       >
         {items.slice(0, visibleCount).map((item, index) => (
           <div key={index} className="relative w-[350px] h-[467px]">
-            <Image src={item.src} alt={item.alt} fill className="object-cover" />
+            <Image src={item.src} alt={item.alt} fill unoptimized className="object-cover" />
           </div>
         ))}
       </motion.div>

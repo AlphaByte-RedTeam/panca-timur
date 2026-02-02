@@ -93,6 +93,7 @@ export const ServicesCarousel = () => {
                           src={data.featuredImg}
                           alt={data.featuredImg}
                           fill
+                          unoptimized
                           className="object-cover p-4"
                         />
                       ) : (
@@ -102,6 +103,7 @@ export const ServicesCarousel = () => {
                           }
                           alt={data.featuredImg?.alt ?? 'Gambar Sampul'}
                           fill
+                          unoptimized
                           className="object-cover p-4"
                         />
                       )}
@@ -136,6 +138,7 @@ export const ServicesCarousel = () => {
                               src={data.featuredImg}
                               alt={data.featuredImg}
                               fill
+                              unoptimized
                               className="object-cover p-4"
                             />
                           ) : (
@@ -146,6 +149,7 @@ export const ServicesCarousel = () => {
                               }
                               alt={data.featuredImg?.alt ?? 'Gambar Sampul'}
                               fill
+                              unoptimized
                               className="object-cover p-4"
                             />
                           )}

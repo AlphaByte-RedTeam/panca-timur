@@ -66,13 +66,13 @@ export default async function HomePage() {
               height={505}
               className="w-full h-auto object-contain"
               priority
-              loading="eager"
+              unoptimized
             />
           ) : (
             <Image
               src={config?.landing_hero?.url ?? '/dokumPancaTimurR/electrical2.jpg'}
               alt={config.landing_hero?.alt ?? 'Gambar Logo Panca Timur Raya'}
-              loading="eager"
+              unoptimized
               priority
               width={653}
               height={505}
@@ -164,6 +164,7 @@ export default async function HomePage() {
                     src={config.top_card_image_1}
                     alt={config.top_card_image_1}
                     fill
+                    unoptimized
                     className="object-cover w-full h-full p-4"
                   />
                 ) : (
@@ -171,6 +172,7 @@ export default async function HomePage() {
                     src={config?.top_card_image_1?.url ?? '/dokumPancaTimurR/projek1.jpg'}
                     alt={config.top_card_image_1?.alt ?? 'Image Project Portfolio'}
                     fill
+                    unoptimized
                     className="object-cover w-full h-full p-4"
                   />
                 )}
@@ -183,6 +185,7 @@ export default async function HomePage() {
                     src={config.top_card_image_2}
                     alt={config.top_card_image_2}
                     fill
+                    unoptimized
                     className="object-cover w-full h-full p-4"
                   />
                 ) : (
@@ -192,6 +195,7 @@ export default async function HomePage() {
                     }
                     alt={config.top_card_image_2?.alt ?? 'Image Project Portfolio'}
                     fill
+                    unoptimized
                     className="object-cover w-full h-full p-4"
                   />
                 )}

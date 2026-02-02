@@ -84,12 +84,19 @@ export const ProductsGrid = ({ isForLandingPage = false }: { isForLandingPage?: 
             <Card className="w-[294px] xl:w-[363px] overflow-hidden">
               <div className="relative w-full h-[303px] xl:h-[341px] min-h-[303px] xl:min-h-[341px]  ">
                 {typeof data.image === 'string' ? (
-                  <Image src={data.image} alt={data.image} fill className="object-cover p-4" />
+                  <Image
+                    src={data.image}
+                    alt={data.image}
+                    fill
+                    unoptimized
+                    className="object-cover p-4"
+                  />
                 ) : (
                   <Image
                     src={data?.image?.url ?? '/dokumPancaTimurR/TankiFRP1.jpg'}
                     alt={data.image?.alt ?? 'Gambar Sampul'}
                     fill
+                    unoptimized
                     className="object-cover p-4"
                   />
                 )}

@@ -35,6 +35,7 @@ const Tape: React.FC = () => {
                       alt={data.image}
                       width={256}
                       height={160}
+                      unoptimized
                       className="h-full w-full object-cover"
                     />
                   ) : (
@@ -43,6 +44,7 @@ const Tape: React.FC = () => {
                       alt={data.image?.alt ?? 'Gambar Brand'}
                       width={256}
                       height={160}
+                      unoptimized
                       className="h-full w-full object-cover"
                     />
                   )}

@@ -35,12 +35,19 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     <div className="flex-1 overflow-y-auto">
       <div className="relative w-full h-[111px] md:h-[222px] lg:h-[340px] flex-shrink-0">
         {typeof blog.featuredImg === 'string' ? (
-          <Image src={blog.featuredImg} alt={blog.featuredImg} fill className="object-cover " />
+          <Image
+            src={blog.featuredImg}
+            alt={blog.featuredImg}
+            fill
+            unoptimized
+            className="object-cover "
+          />
         ) : (
           <Image
             src={blog?.featuredImg?.url ?? '/dokumPancaTimurR/mechanicalplumbing3.jpg'}
             alt={blog.featuredImg?.alt ?? 'Gambar Sampul'}
             fill
+            unoptimized
             className="object-cover "
           />
         )}

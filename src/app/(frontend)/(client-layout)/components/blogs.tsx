@@ -86,6 +86,7 @@ export const Blogs = ({ isForLandingPage = false }: { isForLandingPage?: boolean
                       src={data.featuredImg}
                       alt={data.featuredImg}
                       fill
+                      unoptimized
                       className="object-cover p-4"
                     />
                   ) : (
@@ -93,6 +94,7 @@ export const Blogs = ({ isForLandingPage = false }: { isForLandingPage?: boolean
                       src={data?.featuredImg?.url ?? '/dokumPancaTimurR/mechanicalplumbing3.jpg'}
                       alt={data.featuredImg?.alt ?? 'Gambar Sampul'}
                       fill
+                      unoptimized
                       className="object-cover p-4"
                     />
                   )}

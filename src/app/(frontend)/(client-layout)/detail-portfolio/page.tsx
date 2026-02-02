@@ -27,7 +27,7 @@ export default async function PortfolioPage() {
             alt={config.portofolio_hero}
             fill
             priority
-            loading="eager"
+            unoptimized
             className="object-cover"
           />
         ) : (
@@ -36,7 +36,7 @@ export default async function PortfolioPage() {
             alt={config.portofolio_hero?.alt ?? 'Image Portfolio'}
             fill
             priority
-            loading="eager"
+            unoptimized
             className="object-cover"
           />
         )}

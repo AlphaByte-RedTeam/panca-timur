@@ -30,7 +30,7 @@ export default async function InsightsUpdatesPage() {
             alt={config.insights_hero}
             fill
             priority
-            loading="eager"
+            unoptimized
             className="object-cover"
           />
         ) : (
@@ -38,6 +38,7 @@ export default async function InsightsUpdatesPage() {
             src={config?.insights_hero?.url ?? '/dokumPancaTimurR/hvac8.jpg'}
             alt={config.insights_hero?.alt ?? 'Image Insights Updates'}
             fill
+            unoptimized
             className="object-cover"
           />
         )}

@@ -42,6 +42,7 @@ const Navbar = ({ config }: { config: SiteConfig }) => {
               height={46}
               style={{ height: 'auto' }}
               className="object-contain"
+              unoptimized
             />
           ) : (
             <Image
@@ -51,6 +52,7 @@ const Navbar = ({ config }: { config: SiteConfig }) => {
               height={46}
               style={{ height: 'auto' }}
               className="object-contain"
+              unoptimized
             />
           )}
         </Link>
@@ -126,6 +128,7 @@ const Navbar = ({ config }: { config: SiteConfig }) => {
               height={46}
               style={{ height: 'auto' }}
               className="object-contain"
+              unoptimized
             />
           ) : (
             <Image
@@ -135,6 +138,7 @@ const Navbar = ({ config }: { config: SiteConfig }) => {
               height={46}
               style={{ height: 'auto' }}
               className="object-contain"
+              unoptimized
             />
           )}
         </Link>

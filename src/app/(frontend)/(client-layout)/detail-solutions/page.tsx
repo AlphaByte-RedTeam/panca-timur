@@ -31,7 +31,7 @@ export default async function SolutionsPage() {
             alt={config.solutions_hero}
             fill
             priority
-            loading="eager"
+            unoptimized
             className="object-cover"
           />
         ) : (
@@ -40,7 +40,7 @@ export default async function SolutionsPage() {
             alt={config.solutions_hero?.alt ?? 'Image Solutions'}
             fill
             priority
-            loading="eager"
+            unoptimized
             className="object-cover"
           />
         )}
