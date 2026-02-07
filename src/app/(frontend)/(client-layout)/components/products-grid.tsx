@@ -19,7 +19,11 @@ export const ProductsGrid = ({ isForLandingPage = false }: { isForLandingPage?: 
   const windowWidth = useWindowWidth()
 
   React.useEffect(() => {
-    if (!isForLandingPage || windowWidth === undefined) return
+    if (!isForLandingPage) {
+      setLimit(undefined)
+      return
+    }
+    if (windowWidth === undefined) return
     if (windowWidth >= 1024) {
       setLimit(6)
     } else if (windowWidth >= 768) {
@@ -30,19 +34,12 @@ export const ProductsGrid = ({ isForLandingPage = false }: { isForLandingPage?: 
   }, [isForLandingPage, windowWidth])
 
   const queryProducts = useQuery({
-    queryKey: ['solutions-products', limit],
+    queryKey: ['solutions-products', isForLandingPage ? limit : 'all'],
     queryFn: async () => {
-      if (isForLandingPage) {
-        return await sdk.find({
-          collection: 'products',
-          limit: limit,
-        })
-      } else {
-        return await sdk.find({
-          collection: 'products',
-          limit: 0,
-        })
-      }
+      return await sdk.find({
+        collection: 'products',
+        limit: isForLandingPage ? limit : 0,
+      })
     },
   })
 
