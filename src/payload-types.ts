@@ -70,7 +70,6 @@ export interface Config {
     users: User;
     media: Media;
     companies: Company;
-    documents: Document;
     products: Product;
     services: Service;
     portofolio: Portofolio;
@@ -85,7 +84,6 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     companies: CompaniesSelect<false> | CompaniesSelect<true>;
-    documents: DocumentsSelect<false> | DocumentsSelect<true>;
     products: ProductsSelect<false> | ProductsSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
     portofolio: PortofolioSelect<false> | PortofolioSelect<true>;
@@ -199,17 +197,6 @@ export interface Company {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "documents".
- */
-export interface Document {
-  id: string;
-  name: string;
-  image: string | Media;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "products".
  */
 export interface Product {
@@ -254,7 +241,8 @@ export interface Service {
  */
 export interface Portofolio {
   id: string;
-  tag: string;
+  serviceName?: string | null;
+  tag: string | Service;
   image: string | Media;
   updatedAt: string;
   createdAt: string;
@@ -323,10 +311,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'companies';
         value: string | Company;
-      } | null)
-    | ({
-        relationTo: 'documents';
-        value: string | Document;
       } | null)
     | ({
         relationTo: 'products';
@@ -439,16 +423,6 @@ export interface CompaniesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "documents_select".
- */
-export interface DocumentsSelect<T extends boolean = true> {
-  name?: T;
-  image?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "products_select".
  */
 export interface ProductsSelect<T extends boolean = true> {
@@ -476,6 +450,7 @@ export interface ServicesSelect<T extends boolean = true> {
  * via the `definition` "portofolio_select".
  */
 export interface PortofolioSelect<T extends boolean = true> {
+  serviceName?: T;
   tag?: T;
   image?: T;
   updatedAt?: T;

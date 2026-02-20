@@ -3,8 +3,9 @@
 import { PayloadSDK } from '@payloadcms/sdk'
 import { useQuery } from '@tanstack/react-query'
 import dynamic from 'next/dynamic'
-import { Config } from '../../../../payload-types'
-import { useState } from 'react'
+import type { Config } from '../../../../payload-types'
+import type { Dispatch, SetStateAction } from 'react'
+import { Fragment, useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollBar } from '@/components/ui/scroll-area'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -18,12 +19,58 @@ type GalleryItem = {
   alt: string
 }
 
+const sdk = new PayloadSDK<Config>({
+  baseURL: '/api',
+})
+
+const DynamicTabs = ({
+  setCurrentTabSetter,
+}: {
+  setCurrentTabSetter: Dispatch<SetStateAction<string>>
+}) => {
+  const servicesQuery = useQuery({
+    queryKey: ['solutions-services'],
+    queryFn: async () => {
+      return await sdk.find({
+        collection: 'services',
+        limit: 0,
+      })
+    },
+  })
+  if (servicesQuery.data) {
+    return (
+      <>
+        {servicesQuery.data.docs.map((data) => (
+          <Fragment key={data.id}>
+            <TabsTrigger onClick={() => setCurrentTabSetter(data.title)} value={data.title}>
+              {data.title}
+            </TabsTrigger>
+          </Fragment>
+        ))}
+      </>
+    )
+  } else {
+    return (
+      <>
+        <TabsTrigger
+          onClick={() => setCurrentTabSetter('Mechanical & Plumbing')}
+          value="mechanicalplumbing"
+        >
+          Mechanical & Plumbing
+        </TabsTrigger>
+        <TabsTrigger onClick={() => setCurrentTabSetter('HVAC')} value="hvac">
+          HVAC
+        </TabsTrigger>
+        <TabsTrigger onClick={() => setCurrentTabSetter('Electrical')} value="electrical">
+          Electrical
+        </TabsTrigger>
+      </>
+    )
+  }
+}
+
 export const PortofolioTabs = () => {
   const [currentTab, setCurrentTab] = useState('all')
-
-  const sdk = new PayloadSDK<Config>({
-    baseURL: '/api',
-  })
 
   const query = useQuery({
     queryKey: ['portofolio', currentTab],
@@ -35,9 +82,7 @@ export const PortofolioTabs = () => {
           collection: 'portofolio',
           limit: 0,
           where: {
-            tag: {
-              equals: currentTab,
-            },
+            'tag.title': { equals: currentTab },
           },
         })
       } else {
@@ -59,7 +104,18 @@ export const PortofolioTabs = () => {
           }
         }
       })
+      console.log(imageData)
       return imageData
+    },
+  })
+
+  const servicesQuery = useQuery({
+    queryKey: ['solutions-services'],
+    queryFn: async () => {
+      return await sdk.find({
+        collection: 'services',
+        limit: 0,
+      })
     },
   })
 
@@ -70,18 +126,8 @@ export const PortofolioTabs = () => {
           <TabsTrigger onClick={() => setCurrentTab('all')} value="all">
             All
           </TabsTrigger>
-          <TabsTrigger
-            onClick={() => setCurrentTab('Mechanical & Plumbing')}
-            value="mechanicalplumbing"
-          >
-            Mechanical & Plumbing
-          </TabsTrigger>
-          <TabsTrigger onClick={() => setCurrentTab('HVAC')} value="hvac">
-            HVAC
-          </TabsTrigger>
-          <TabsTrigger onClick={() => setCurrentTab('Electrical')} value="electrical">
-            Electrical
-          </TabsTrigger>
+
+          <DynamicTabs setCurrentTabSetter={setCurrentTab} />
           <ScrollBar orientation="horizontal" />
         </TabsList>
       </ScrollArea>
@@ -127,116 +173,46 @@ export const PortofolioTabs = () => {
         </div>
       </TabsContent>
 
-      <TabsContent value="mechanicalplumbing" className="mt-[8px] md:mt-0">
-        <div className="relative min-h-[250px]">
-          {query.data ? (
-            <GalleryAll items={query.data} />
-          ) : query.isError ? (
-            <Card className=" flex flex-col justify-items-center m-2 mx-6">
-              <CardHeader className="w-full pt-[24px] md:pt-[44px] lg:pt-[60px] mb-[16px]">
-                <CardTitle className="text-center">Tidak ditemukan Portofolio</CardTitle>
-              </CardHeader>
-              <CardContent className="w-full text-center pb-[12px] mb-[16px]">
-                <div className="p">Mungkin terjadi kesalahan, coba muat ulang halaman ini</div>
-              </CardContent>
-            </Card>
-          ) : query.isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-y-[16px] md:gap-y-[24px] lg:gap-y-[44px]">
-              <Skeleton className="relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
-              <Skeleton className="hidden md:block relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
-              <Skeleton className="hidden lg:block relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
-            </div>
-          ) : (
-            <Card className="flex flex-col  m-2 mx-6">
-              <CardHeader className="w-full pt-[24px] md:pt-[44px] lg:pt-[60px] mb-[16px]">
-                <CardTitle className="text-center">Tidak ditemukan Portofolio</CardTitle>
-              </CardHeader>
-              <CardContent className="w-full text-center pb-[12px] mb-[16px]">
-                <div className="p">Mungkin terjadi kesalahan, coba muat ulang halaman ini</div>
-              </CardContent>
-              <CardFooter>
-                <div className="invisible" aria-hidden="true">
-                  Spacer
+      {servicesQuery.data?.docs.map((data) => (
+        <Fragment key={data.id}>
+          <TabsContent value={data.title} className="mt-[8px] md:mt-0">
+            <div className="relative min-h-[250px]">
+              {query.data ? (
+                <GalleryAll items={query.data} />
+              ) : query.isError ? (
+                <Card className=" flex flex-col justify-items-center m-2 mx-6">
+                  <CardHeader className="w-full pt-[24px] md:pt-[44px] lg:pt-[60px] mb-[16px]">
+                    <CardTitle className="text-center">Tidak ditemukan Portofolio</CardTitle>
+                  </CardHeader>
+                  <CardContent className="w-full text-center pb-[12px] mb-[16px]">
+                    <div className="p">Mungkin terjadi kesalahan, coba muat ulang halaman ini</div>
+                  </CardContent>
+                </Card>
+              ) : query.isLoading ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-y-[16px] md:gap-y-[24px] lg:gap-y-[44px]">
+                  <Skeleton className="relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
+                  <Skeleton className="hidden md:block relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
+                  <Skeleton className="hidden lg:block relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
                 </div>
-              </CardFooter>
-            </Card>
-          )}
-        </div>
-      </TabsContent>
-
-      <TabsContent value="hvac" className="mt-[8px] md:mt-0">
-        <div className="relative min-h-[250px]">
-          {query.data ? (
-            <GalleryAll items={query.data} />
-          ) : query.isError ? (
-            <Card className=" flex flex-col justify-items-center m-2 mx-6">
-              <CardHeader className="w-full pt-[24px] md:pt-[44px] lg:pt-[60px] mb-[16px]">
-                <CardTitle className="text-center">Tidak ditemukan Portofolio</CardTitle>
-              </CardHeader>
-              <CardContent className="w-full text-center pb-[12px] mb-[16px]">
-                <div className="p">Mungkin terjadi kesalahan, coba muat ulang halaman ini</div>
-              </CardContent>
-            </Card>
-          ) : query.isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-y-[16px] md:gap-y-[24px] lg:gap-y-[44px]">
-              <Skeleton className="relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
-              <Skeleton className="hidden md:block relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
-              <Skeleton className="hidden lg:block relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
+              ) : (
+                <Card className="flex flex-col  m-2 mx-6">
+                  <CardHeader className="w-full pt-[24px] md:pt-[44px] lg:pt-[60px] mb-[16px]">
+                    <CardTitle className="text-center">Tidak ditemukan Portofolio</CardTitle>
+                  </CardHeader>
+                  <CardContent className="w-full text-center pb-[12px] mb-[16px]">
+                    <div className="p">Mungkin terjadi kesalahan, coba muat ulang halaman ini</div>
+                  </CardContent>
+                  <CardFooter>
+                    <div className="invisible" aria-hidden="true">
+                      Spacer
+                    </div>
+                  </CardFooter>
+                </Card>
+              )}
             </div>
-          ) : (
-            <Card className="flex flex-col  m-2 mx-6">
-              <CardHeader className="w-full pt-[24px] md:pt-[44px] lg:pt-[60px] mb-[16px]">
-                <CardTitle className="text-center">Tidak ditemukan Portofolio</CardTitle>
-              </CardHeader>
-              <CardContent className="w-full text-center pb-[12px] mb-[16px]">
-                <div className="p">Mungkin terjadi kesalahan, coba muat ulang halaman ini</div>
-              </CardContent>
-              <CardFooter>
-                <div className="invisible" aria-hidden="true">
-                  Spacer
-                </div>
-              </CardFooter>
-            </Card>
-          )}
-        </div>
-      </TabsContent>
-
-      <TabsContent value="electrical" className="mt-[8px] md:mt-0">
-        <div className="relative min-h-[250px]">
-          {query.data ? (
-            <GalleryAll items={query.data} />
-          ) : query.isError ? (
-            <Card className=" flex flex-col justify-items-center m-2 mx-6">
-              <CardHeader className="w-full pt-[24px] md:pt-[44px] lg:pt-[60px] mb-[16px]">
-                <CardTitle className="text-center">Tidak ditemukan Portofolio</CardTitle>
-              </CardHeader>
-              <CardContent className="w-full text-center pb-[12px] mb-[16px]">
-                <div className="p">Mungkin terjadi kesalahan, coba muat ulang halaman ini</div>
-              </CardContent>
-            </Card>
-          ) : query.isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-y-[16px] md:gap-y-[24px] lg:gap-y-[44px]">
-              <Skeleton className="relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
-              <Skeleton className="relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
-              <Skeleton className="relative bg-gray-100 w-[350px] h-[467px] object-cover my-[16px] md:my-[24px] lg:my-[44px]" />
-            </div>
-          ) : (
-            <Card className="flex flex-col  m-2 mx-6">
-              <CardHeader className="w-full pt-[24px] md:pt-[44px] lg:pt-[60px] mb-[16px]">
-                <CardTitle className="text-center">Tidak ditemukan Portofolio</CardTitle>
-              </CardHeader>
-              <CardContent className="w-full text-center pb-[12px] mb-[16px]">
-                <div className="p">Mungkin terjadi kesalahan, coba muat ulang halaman ini</div>
-              </CardContent>
-              <CardFooter>
-                <div className="invisible" aria-hidden="true">
-                  Spacer
-                </div>
-              </CardFooter>
-            </Card>
-          )}
-        </div>
-      </TabsContent>
+          </TabsContent>
+        </Fragment>
+      ))}
     </Tabs>
   )
 }
