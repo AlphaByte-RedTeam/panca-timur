@@ -2,9 +2,9 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { resendAdapter } from '@payloadcms/email-resend'
-import path from 'path'
+import path from 'node:path'
 import { buildConfig } from 'payload'
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
 
 import { Users } from './collections/Users'
@@ -13,7 +13,6 @@ import { Products } from './collections/Products'
 import { Portofolio } from './collections/Portofolio'
 import { Services } from './collections/Services'
 import { Blogs } from './collections/Blogs'
-import { Documents } from './collections/Documents'
 import { Companies } from './collections/Companies'
 
 import { en } from '@payloadcms/translations/languages/en'
@@ -36,7 +35,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Companies, Documents, Products, Services, Portofolio, Blogs],
+  collections: [Users, Media, Companies, Products, Services, Portofolio, Blogs],
   email: resendAdapter({
     defaultFromAddress: 'noreply@team37.co',
     defaultFromName: 'Reset Password (noreply)',

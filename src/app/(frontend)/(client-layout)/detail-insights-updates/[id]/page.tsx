@@ -70,7 +70,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         </Breadcrumb>
         <h1 className="titleh1 text-[#0062B0] ">{blog.title}</h1>
         <p className="alternative py-5">{formattedDate}</p>
-        <RichText data={blog.content} className="" />
+        <RichText data={blog.content} className="rich-text-content" />
       </div>
     </div>
   )

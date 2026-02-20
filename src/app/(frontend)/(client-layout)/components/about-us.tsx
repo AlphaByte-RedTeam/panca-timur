@@ -228,7 +228,7 @@ const AboutUs = ({ config }: { config: AboutUsPage }) => {
               className="p"
             >
               {config.about_us_legal_descriptions && (
-                <RichText data={config.about_us_legal_descriptions} />
+                <RichText data={config.about_us_legal_descriptions} className="rich-text-content" />
               )}
             </motion.div>
           </div>
