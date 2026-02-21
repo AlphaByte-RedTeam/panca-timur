@@ -53,15 +53,13 @@ export default async function PortfolioPage() {
 
       <div className="px-[20px] md:px-[44px]">
         <h1 className="titleh1 py-[19px] text-[#10385d]">{config.portofolio_project_heading}</h1>
-        <p className="p text-[#747775] pb-4">
-          A structured overview of our project experience across industries.
-        </p>
+        <p className="p text-[#747775] pb-4">{config.portofolio_project_description}</p>
         <ProjectsTable />
       </div>
 
       <div className="px-[20px] md:px-[44px]">
-        <h1 className="titleh1 py-[19px] text-[#10385d]">Gallery</h1>
-        <p className="p text-[#747775]">Selected projects delivered by our experienced team.</p>
+        <h1 className="titleh1 py-[19px] text-[#10385d]">{config.portofolio_gallery_heading}</h1>
+        <p className="p text-[#747775]">.{config.portofolio_gallery_description}</p>
       </div>
 
       <PortofolioTabs />

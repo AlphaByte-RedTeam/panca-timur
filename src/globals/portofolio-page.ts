@@ -66,16 +66,32 @@ export const PortofolioConfig: GlobalConfig = {
           name: 'portofolio_project_heading',
           type: 'text',
           label: {
-            id: 'Judul',
-            en: 'Heading',
+            id: 'Judul Proyek',
+            en: 'Project Heading',
           },
         },
         {
           name: 'portofolio_project_description',
           type: 'text',
           label: {
-            id: 'Deskripsi',
-            en: 'Description',
+            id: 'Deskripsi Proyek',
+            en: 'Project Description ',
+          },
+        },
+        {
+          name: 'portofolio_gallery_heading',
+          type: 'text',
+          label: {
+            id: 'Judul Galeri',
+            en: 'Gallery Heading',
+          },
+        },
+        {
+          name: 'portofolio_gallery_description',
+          type: 'text',
+          label: {
+            id: 'Deskripsi Galeri',
+            en: 'Gallery Description',
           },
         },
       ],
