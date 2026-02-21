@@ -73,6 +73,7 @@ export interface Config {
     products: Product;
     services: Service;
     portofolio: Portofolio;
+    'portofolio-projects': PortofolioProject;
     blogs: Blog;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -87,6 +88,7 @@ export interface Config {
     products: ProductsSelect<false> | ProductsSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
     portofolio: PortofolioSelect<false> | PortofolioSelect<true>;
+    'portofolio-projects': PortofolioProjectsSelect<false> | PortofolioProjectsSelect<true>;
     blogs: BlogsSelect<false> | BlogsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -249,6 +251,18 @@ export interface Portofolio {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portofolio-projects".
+ */
+export interface PortofolioProject {
+  id: string;
+  year: string;
+  name: string;
+  description: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "blogs".
  */
 export interface Blog {
@@ -323,6 +337,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'portofolio';
         value: string | Portofolio;
+      } | null)
+    | ({
+        relationTo: 'portofolio-projects';
+        value: string | PortofolioProject;
       } | null)
     | ({
         relationTo: 'blogs';
@@ -453,6 +471,17 @@ export interface PortofolioSelect<T extends boolean = true> {
   serviceName?: T;
   tag?: T;
   image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portofolio-projects_select".
+ */
+export interface PortofolioProjectsSelect<T extends boolean = true> {
+  year?: T;
+  name?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }

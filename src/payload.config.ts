@@ -24,6 +24,7 @@ import { LandingConfig } from './globals/landing-page'
 import { PortofolioConfig } from './globals/portofolio-page'
 import { SolutionsConfig } from './globals/solutions-page'
 import { SiteConfig } from './globals/site-config'
+import { PortofolioProjects } from './collections/PortofolioProjects'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -35,7 +36,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Companies, Products, Services, Portofolio, Blogs],
+  collections: [Users, Media, Companies, Products, Services, Portofolio, PortofolioProjects, Blogs],
   email: resendAdapter({
     defaultFromAddress: 'noreply@team37.co',
     defaultFromName: 'Reset Password (noreply)',
