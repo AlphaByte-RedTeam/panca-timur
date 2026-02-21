@@ -104,7 +104,6 @@ export const PortofolioTabs = () => {
           }
         }
       })
-      console.log(imageData)
       return imageData
     },
   })
