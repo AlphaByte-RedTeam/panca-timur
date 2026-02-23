@@ -1,7 +1,7 @@
-import {
+import type {
   Blog,
   Company,
-  Document as PayloadDocument,
+  // Document as PayloadDocument,
   Portofolio,
   Product,
   Service,
@@ -66,16 +66,16 @@ export function makeCompany(overrides: Partial<Company> = {}): Company {
   }
 }
 
-export function makeDocument(overrides: Partial<PayloadDocument> = {}): PayloadDocument {
-  return {
-    id: 'Document-id',
-    name: 'Document',
-    image: 'https://www.example.com/images',
-    createdAt: new Date().toString(),
-    updatedAt: new Date().toString(),
-    ...overrides,
-  }
-}
+// export function makeDocument(overrides: Partial<PayloadDocument> = {}): PayloadDocument {
+//   return {
+//     id: 'Document-id',
+//     name: 'Document',
+//     image: 'https://www.example.com/images',
+//     createdAt: new Date().toString(),
+//     updatedAt: new Date().toString(),
+//     ...overrides,
+//   }
+// }
 
 export function makeProduct(overrides: Partial<Product> = {}): Product {
   return {
